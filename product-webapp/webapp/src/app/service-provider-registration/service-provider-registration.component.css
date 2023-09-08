@@ -1,0 +1,40 @@
+h3 {
+    color: rgb(0, 119, 255);
+  }
+  
+  h2 {
+    color: rgb(0, 119, 255);
+  }
+  
+  .label {
+    margin-bottom: 5px;
+    color: rgb(0, 119, 255);
+  }
+  
+  .input {
+    margin-bottom: 15px;
+  }
+  
+  .navbar {
+    padding-left: 15px;
+    padding-right: 15px;
+    border-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .btn-left {
+    margin-left: 10px;
+  }
+  
+  .img {
+    padding-left: 15px;
+    margin-right: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(-1 * var(--bs-gutter-y));
+    margin-right: calc(-.5 * var(--bs-gutter-x));
+    margin-left: calc(-.5 * var(--bs-gutter-x));
+  }
+  
