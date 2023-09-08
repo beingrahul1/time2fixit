@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -62,5 +63,22 @@ public class ServiceCenterController {
 
 		}
 		
+	}
+	
+	@DeleteMapping("delete")
+	public ResponseEntity<?> deleteServiceCenter(@RequestBody ServiceCenter c1)
+	{
+		ServiceCenter c2 = centerRepository.findByemail(c1.getEmail());
+		if(c2 == null)
+		{
+			return new ResponseEntity<String>("Service Center Not Exist", HttpStatus.OK);
+		}
+		else {
+			centerRepository.delete(c2);
+		//	customerServiceRepository.save(c3);
+			
+			return new ResponseEntity<String>("Service Center Deleted", HttpStatus.OK);
+			
+		}
 	}
 }
