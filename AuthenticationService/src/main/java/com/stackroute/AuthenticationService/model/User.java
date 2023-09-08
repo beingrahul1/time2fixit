@@ -19,7 +19,7 @@ public class User {
 	@Id
 	String email;
 	String password;
-//	String role;
+	String role;
 	
 }
 
