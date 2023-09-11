@@ -71,6 +71,28 @@ public class UserController {
     	userRepository.save(u1);
     	
           }
+
+
+    @PostMapping("na/forgot")
+    public ResponseEntity<?> forgotPassword(@RequestBody User u1)
+    {
+    	User u2 = userRepository.findByEmail(u1.getEmail());
+    	return new ResponseEntity<String>(u2.getPassword(),HttpStatus.OK);
+    	
+    }
+    
+    @PostMapping("na/reset")
+    public ResponseEntity<?> resetPassword(@RequestBody User u1)
+    {
+    	User u2 = userRepository.findByEmail(u1.getEmail());
+    	u1.setRole(u2.getRole());
+    	userRepository.delete(u2);
+    	userRepository.save(u1);
+    	return new ResponseEntity<String>("Password Reset Done", HttpStatus.OK);
+
+    }
+
+
 //    @PostMapping("na/technician/signup")
 //    public User techniciansignup(@RequestBody User t1){
 //    	
