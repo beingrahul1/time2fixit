@@ -7,12 +7,14 @@ import { UserRegistrationComponent } from './user-registration/user-registration
 import { ServiceProviderRegistrationComponent } from './service-provider-registration/service-provider-registration.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserRegistrationComponent,
-    ServiceProviderRegistrationComponent
+    ServiceProviderRegistrationComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
