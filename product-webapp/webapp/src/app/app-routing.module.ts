@@ -6,7 +6,7 @@ import { ServiceProviderRegistrationComponent } from './service-provider-registr
 import { UserRegistrationComponent } from './user-registration/user-registration.component';
 
 const routes: Routes = [
-  { path: '', component: UserRegistrationComponent },
+  { path: '', component: HomeComponent },
   { path: 'service-provider-registration', component: ServiceProviderRegistrationComponent },
   { path: 'user-registration', component: UserRegistrationComponent },
   { path: 'home', component: HomeComponent },

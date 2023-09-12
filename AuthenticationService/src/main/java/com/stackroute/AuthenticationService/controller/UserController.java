@@ -2,6 +2,8 @@ package  com.stackroute.AuthenticationService.controller;
 
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 //import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

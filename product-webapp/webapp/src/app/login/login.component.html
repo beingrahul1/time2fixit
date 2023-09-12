@@ -1,4 +1,60 @@
-<h3> Login </h3>
-    <p>Email Id : <input type="text" [(ngModel)]="email"></p>
-    <p>Password : <input type="password" [(ngModel)]="password"></p>
-    <button class="btn btn-dark" (click)="onLogin()"> Login </button>
+<nav class="navbar  bg-primary sticky-top">
+    <button type="button" class="btn btn-light"><a class="navbar-brand" href="#">Time2FixIt</a>
+    </button>
+    <div class="btn-left">
+        <button type="button" class="btn btn-left btn-outline-light" routerLink="/user-registration">Sign Up as User</button>
+        <button type="button" class="btn btn-left btn-outline-light" routerLink="/service-provider-registration">Sign Up as Service</button>
+    </div>
+  </nav>
+  
+  <div class="container registration-container"><br>
+  
+    <div class="row">
+        <div class="col-lg-5">
+            <img src="assets/login-Image.jpeg" alt="login Image" class="img-fluid img-sm img-md img-lg">
+        </div>
+        <div class="col-md-7">
+            
+            <p></p>
+            <h3>LOGIN</h3>
+            <form class="mt-4" (ngSubmit)="onLogin()" >
+                <div class="row">
+                    <div class="col-md-6">
+  
+                        <div class="form-group">
+                    
+                            <select class="form-control input" id="login"  name="login">
+                                <option value="" disabled selected>Login as </option>
+                                <option class="form-control" value="user" name="option1">User</option>
+                                <option value="service-provider" name="option2">Service provider</option>
+                            </select>
+                        </div>
+  
+                        <div class="form-group">
+                            <label for="email" class="label">EMAIL ID</label>
+                            <input type="email" class="form-control input" id="email" placeholder="Enter your Email Id" [(ngModel)]="email" [ngModelOptions]="{standalone: true}">
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="label">PASSWORD</label>
+                            <input type="password" class="form-control input" id="password" placeholder="Enter your password" [(ngModel)]="password" [ngModelOptions]="{standalone: true}">
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">LOGIN</button>
+                <a routerLink="/forgot-password" class="forgot-password-button">Forgot Password?</a>
+                
+        </form>
+        </div>
+    </div>
+  </div>
+  <br><p></p>
+  <footer class="bg-primary text-white text-center py-3">
+    &copy; time2fixit 2023
+  </footer>
+  
+  
+  
+  <!-- <h3> Login </h3>
+      <p>Email Id : <input type="text" [(ngModel)]="email"></p>
+      <p>Password : <input type="password" [(ngModel)]="password"></p>
+      <button class="btn btn-dark" (click)="onLogin()"> Login </button> -->
