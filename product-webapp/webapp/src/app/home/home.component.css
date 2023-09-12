@@ -1,83 +1,77 @@
-.navbar {
-    background-color: #0077FF; /* Change the background color as desired */
-    color: #fff; /* Text color */
+/* h3{
+    color: rgb(0, 119, 255);
+}h2{
+    color: rgb(0, 119, 255);
+}
+
+  .label {
+    margin-bottom: 5px;
+    color: rgb(0, 119, 255);
   }
   
-  .navbar-brand {
-    font-size: 24px; /* Adjust the font size for the navbar brand */
+  .input {
+    margin-bottom: 15px;
   }
-  
-  .navbar-nav .nav-item{
-    color: #fff; /* Text color for navbar links */
-    margin-left: 10px; 
-    
-  }
-  
-  .nav-link
-  
-  .navbar-toggler-icon {
-    background-color: #fff; /* Color of the navbar toggler icon (hamburger menu) */
-  }
-  
-  /* User image in the dropdown */
-  .navbar .dropdown-toggle img {
-    max-width: 30px; /* Adjust the image size as needed */
-    border-radius: 50%; /* Make the image circular */
-    margin-right: 5px; /* Add some spacing between the image and text in the dropdown */
-  }
-  
-  /* Dropdown menu styles */
-  .dropdown-menu {
-    background-color: #0077FF; /* Background color for the dropdown menu */
-  }
-  
-  .dropdown-item {
-    color: #fff; /* Text color for dropdown items */
-  }
-  
-  /* Hover effect for dropdown items */
-  .dropdown-item:hover {
-    background-color: #0055CC; /* Change the background color on hover */
-    color: #fff; /* Change the text color on hover */
-  }
-  
-  /* Adjust padding and margins as needed for spacing between elements */
   .navbar {
-    padding: 10px 20px; /* Adjust padding as needed */
+    padding-left: 15px;
+    padding-right: 15px; 
+    border-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .btn-left {
+    margin-left: 10px; 
+}
+.navbar .dropdown-toggle img {
+  max-width: 30px;
+}
+  .img {
+    padding-left: 30px;
+    width: 20%;
+    margin: 10px 10px 10px 10px; 
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(-1 * var(--bs-gutter-y));
+    margin-right: calc(-.5 * var(--bs-gutter-x));
+    margin-left: calc(-.5 * var(--bs-gutter-x));
   }
   
-  .navbar-nav {
-    margin-left: auto; /* Push navbar links to the right */
-  }
-  
-  .custom-card {
-     
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 15px ;
+}
+.custom-card {
+   
     text-align: center;
     padding: 20px;
-  }
-  .changedWidth{
+}
+.changedWidth{
     max-width: 20%;
     text-align: justify;
-  }
-  .img-fluid {
+}
+.img-fluid {
     max-width: 20%;
     height: auto;
-  }
-  .custom-card2 {
+}
+.custom-card2 {
     padding: 20px;
     margin: 10px;
-  
+
     text-align: center;
     background-color: rgb(0, 119, 255);
     color: rgb(255, 255, 255);
-  
+
   }
   
   .custom-card2 img {
     max-width: 100%;
     height: auto;
     margin: 10px 0;
-  
+ 
   }
   
   .custom-card2 h4 {
@@ -121,4 +115,129 @@
     margin-left: 15px;
   }
   
+   */
+
+   /* Navbar styles */
+.navbar {
+  background-color: #0077FF; /* Change the background color as desired */
+  color: #fff; /* Text color */
+}
+
+.navbar-brand {
+  font-size: 24px; /* Adjust the font size for the navbar brand */
+}
+
+.navbar-nav .nav-item{
+  color: #fff; /* Text color for navbar links */
+  margin-left: 10px; 
   
+}
+
+.nav-link
+
+.navbar-toggler-icon {
+  background-color: #fff; /* Color of the navbar toggler icon (hamburger menu) */
+}
+
+/* User image in the dropdown */
+.navbar .dropdown-toggle img {
+  max-width: 30px; /* Adjust the image size as needed */
+  border-radius: 50%; /* Make the image circular */
+  margin-right: 5px; /* Add some spacing between the image and text in the dropdown */
+}
+
+/* Dropdown menu styles */
+.dropdown-menu {
+  background-color: #0077FF; /* Background color for the dropdown menu */
+}
+
+.dropdown-item {
+  color: #fff; /* Text color for dropdown items */
+}
+
+/* Hover effect for dropdown items */
+.dropdown-item:hover {
+  background-color: #0055CC; /* Change the background color on hover */
+  color: #fff; /* Change the text color on hover */
+}
+
+/* Adjust padding and margins as needed for spacing between elements */
+.navbar {
+  padding: 10px 20px; /* Adjust padding as needed */
+}
+
+.navbar-nav {
+  margin-left: auto; /* Push navbar links to the right */
+}
+
+.custom-card {
+   
+  text-align: center;
+  padding: 20px;
+}
+.changedWidth{
+  max-width: 20%;
+  text-align: justify;
+}
+.img-fluid {
+  max-width: 20%;
+  height: auto;
+}
+.custom-card2 {
+  padding: 20px;
+  margin: 10px;
+
+  text-align: center;
+  background-color: rgb(0, 119, 255);
+  color: rgb(255, 255, 255);
+
+}
+
+.custom-card2 img {
+  max-width: 100%;
+  height: auto;
+  margin: 10px 0;
+
+}
+
+.custom-card2 h4 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.custom-card2 p {
+  font-size: 1rem;
+}
+.full-size-div {
+  background-color: rgb(0, 119, 255);
+  color: white;
+  padding: 50px 0;
+  text-align: center;
+}
+
+.full-size-div h3 {
+  margin-top: 20px;
+  color: white;
+}
+
+.full-size-div h4 {
+  margin-top: 10px;
+}
+.white-div {
+  background-color: white;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+
+.white-div h3 {
+  font-size: 1.5rem;
+  margin-right: 15px;
+  color: rgb(0, 119, 255); 
+}
+
+.white-div button {
+  margin-left: 15px;
+}
+
