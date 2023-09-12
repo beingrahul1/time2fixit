@@ -1,0 +1,151 @@
+body{
+    background-color: white;
+    
+}
+
+.header
+{
+    background-color: rgb(78, 197, 248);
+    position:relative;
+    
+}
+
+/* .container
+{
+    display: flex;
+    /* justify-content: space-between; */
+    /* display: flex; */
+    /* flex-direction: row; */
+    /* justify-content: center; */
+/* } */ 
+
+h3{
+    color: white;
+    padding: 10px;
+    font-weight: bolder;
+    
+}
+
+.para
+{
+    color: white;
+    font-weight: bolder;
+    padding: 20px;
+    margin-left: 75%;
+}
+
+.para1
+{
+    color: white;
+    font-weight: bolder;
+    padding: 20px;
+    margin-left: 0%;
+
+}
+
+.text1
+{
+    color: rgb(78, 197, 248);
+    font-weight: bolder;
+    padding: 10px;
+}
+
+.container2
+{
+    margin-top: 50px;
+    text-align: center;
+}
+
+.container3
+{
+    border-radius: 30px;
+    border-color: rgb(78, 197, 248);
+    border-width: 5px;
+    padding: 10px;
+    width:25%;
+    flex-direction: column;
+    display: flex;
+    
+   
+
+}
+
+
+.container4
+{
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display:block;
+}
+
+footer{
+    background-color: rgb(78, 197, 248);
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.footertext
+{
+    color: white;
+    font-weight: bolder;
+}
+
+.shopdetails
+{
+    color: white;
+    font-weight: bolder;
+}
+
+.container4
+{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Optional: vertically center the inner div */
+    margin-bottom: 30px;
+}
+
+.container5
+{
+    background-color:rgb(78, 197, 248) ;
+    text-align: center;
+    height: 300px;
+    width: 70%;
+    /* margin-left: 150px; */
+    /* border-radius: 10px; */
+}
+
+.btnstyle
+{
+    background-color: rgb(78, 197, 248);
+    color: white;
+}
+
+.inputcontainer
+{
+    border: none;
+}
+
+.iconstyle
+{
+    opacity: 0.5;
+    margin-right: 10px;
+}
+
+.carticon
+{
+    margin-left: 700px;
+}
+
+.container6
+{
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display:flex;
+    flex-wrap: wrap;
+}

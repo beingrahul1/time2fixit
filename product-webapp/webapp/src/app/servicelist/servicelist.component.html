@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgb(78, 197, 248);
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 0px 16px;
+  text-decoration: none;
+}
+
+
+        .sub-checkboxes {
+            display: block;
+            margin-left: 20px;
+            color: rgb(78, 197, 248);
+        }
+        .sub-checkboxes1 {
+            display:block ;
+            margin-left: 20px;
+            color:rgb(78, 197, 248);
+        }
+        .sub-checkboxes2 {
+            display: block;
+            margin-left: 20px;
+            color:rgb(78, 197, 248);
+        }
+
+        .container
+        {
+            /* border-color: black ; */
+            
+            border: 2px solid rgb(78, 197, 248);
+            /* width: 15%; */
+            /* height: 50%; */
+            /* text-align: center; */
+            /* justify-content: center;
+            align-content: center; */
+        }
+
+        .vertical-line {
+            border-left: 2px solid rgb(78, 197, 248);; /* 2-pixel wide solid black vertical line */
+            height: 800px; /* Adjust the height as needed */
+            margin: 0 20px; /* Add some margin for spacing */
+        }
+
+        * {
+  box-sizing: border-box;
+}
+
+.box {
+  float: left;
+  width: 20%;
+  /* padding: 50px; */
+  /* height:200px; */
+  /* border-left:2px; */
+  /* border-color:black; */
+}
+.box1 {
+  float: left;
+  width: 75%;
+  /* padding: 50px; */
+  /* height:200px; */
+}
+
+.box2{
+    float: left;
+    width: 5%;
+}
+
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+
+}
+
+
+    </style>
+</head>
+<body>
+    
+    <ul>
+        <li><a routerLink="/home"><h3 style="font-weight: bolder;">Time2Fixit</h3></a></li>
+         <!-- <li style="float: right"><a routerLink="/user-login"><h3>SignIn</h3></a></li>
+          <li style="float: right"><a routerLink='/user-registration' ><h3>SignUp</h3></a></li> -->
+      </ul>
+
+    <div class="container2">
+        <h3 class="text1"> Find a Service Centre </h3>
+        <div class="container6">
+            <div class="container3 card">
+                <!-- <i class="fa fa-search iconstyle">   </i> -->
+                <input class="inputcontainer" type="text" placeholder="Search State or City">
+                
+            </div>
+                <br>
+            <div>
+                <button type="button" class="btn btnstyle">Search</button>
+            </div>
+            
+        </div>
+        
+    </div>
+    <div style="margin-top: 50px;">
+        <div class="clearfix">
+            <div class="box">
+                <div style="margin-left: 20px;">
+                    <form>
+                        <div style="text-align: center;">
+                            <p style="color: rgb(78, 197, 248); font-weight: bolder;">Filter Result</p>
+                        </div>
+                
+                        <div style="margin-top: 10px;">
+                        
+                        <input type="checkbox" id="shopNameCheckbox">
+                        <label style="font-weight: bolder; color: rgb(78, 197, 248); margin-left: 10px;" for="shopName">Shop Name </label>
+                        
+                        
+                        <br><br>
+                        <input type="checkbox" id="shopOwnerNameCheckbox">
+                        <label style="font-weight: bolder; color: rgb(78, 197, 248); margin-left: 10px;" for="ShopOwnerName"> Shop Owner Name </label>
+                        
+                        
+                        <br><br>
+                        <input type="checkbox" id="EmailCheckbox">
+                        <label style="font-weight: bolder; color: rgb(78, 197, 248); margin-left: 10px;" for="Email">Email </label>
+                        
+                       
+                        <br><br>
+                
+                        <input type="checkbox" id="locationCheckbox">
+                        <label style="font-weight: bolder; color: rgb(78, 197, 248); margin-left: 10px;" for="location">Location </label>
+                        
+                     
+                        <br>
+                
+                        <div class="sub-checkboxes">
+                            <input type="checkbox" id="mumbaiCheckbox" name="location" value="Mumbai">
+                            <label style="margin-left: 10px;" for="mumbaiCheckbox">Mumbai</label><br>
+                            <input type="checkbox" id="chennaiCheckbox" name="location" value="Chennai">
+                            <label style="margin-left: 10px;" for="chennaiCheckbox">Chennai</label><br>
+                            <input type="checkbox" id="hyderabadCheckbox" name="location" value="Hyderabad">
+                            <label style="margin-left: 10px;" for="hyderabadCheckbox">Hyderabad</label><br>
+                        </div>
+                
+                        <br><br>
+                
+                        <input type="checkbox" id="productbrandCheckbox">
+                        <label style="font-weight: bolder; color:rgb(78, 197, 248); margin-left: 10px;" for="Brand">Product Brand </label>
+                        
+                       
+                        <br>
+                
+                        <div class="sub-checkboxes1">
+                            <input type="checkbox" id="xiaomi" name="productbrand" value="Xiaomi">
+                            <label style="margin-left: 10px;" for="xiaomi">Xiaomi</label><br>
+                            <input type="checkbox" id="apple" name="productbrand" value="Apple">
+                            <label style="margin-left: 10px;" for="chennaiCheckbox">Apple</label><br>
+                            <input type="checkbox" id="oneplus" name="productbrand" value="Oneplus">
+                            <label style="margin-left: 10px;" for="hyderabadCheckbox">Oneplus</label><br>
+                        </div>
+                        <br><br>
+                        <input type="checkbox" id="typeCheckbox">
+                        <label style="font-weight: bolder; color:rgb(78, 197, 248); margin-left: 10px;" for="type"> Type of Device </label>
+                        
+                       
+                        <br>
+                
+                        <div class="sub-checkboxes2">
+                            <input type="checkbox" id="laptop" name="type" value="Laptop">
+                            <label style="margin-left: 10px;" for="laptopCheckbox">Laptop</label><br>
+                            <input type="checkbox" id="mobile" name="type" value="Mobile">
+                            <label style="margin-left: 10px;" for="MobileCheckbox">Mobile</label><br>
+                            <input type="checkbox" id="desktop" name="type" value="Desktop">
+                            <label style="margin-left: 10px;" for="desktopCheckbox">Desktop</label><br>
+                        </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+            <div class="box2">
+                <div class="vertical-line"></div>
+            </div>
+            <div class="box1">
+                <div class="container4">
+                    <div class="container5">
+                        <p> Service Provider-1 </p>
+                    </div>
+                </div>
+                <div class="container4">
+                    <div class="container5">
+                        <p> Service Provider-2 </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <script>
+        const locationCheckbox = document.getElementById('locationCheckbox');
+        const subCheckboxes = document.querySelectorAll('.sub-checkboxes input[type="checkbox"]');
+
+        locationCheckbox.addEventListener('change', function () {
+            if (this.checked) {
+                document.querySelector('.sub-checkboxes').style.display = 'block';
+            } else {
+                document.querySelector('.sub-checkboxes').style.display = 'block';
+                subCheckboxes.forEach(function (subCheckbox) {
+                    subCheckbox.checked = false;
+                });
+            }
+        });
+        const Checkbox = document.getElementById('typeCheckbox');
+        const subCheckboxes2 = document.querySelectorAll('.sub-checkboxes2 input[type="checkbox"]');
+
+        Checkbox.addEventListener('change', function () {
+            if (this.checked) {
+                document.querySelector('.sub-checkboxes2').style.display = 'block';
+            } else {
+                document.querySelector('.sub-checkboxes2').style.display = 'block';
+                subCheckboxes.forEach(function (subCheckbox) {
+                    subCheckbox.checked = false;
+                });
+            }
+        });
+        const productbrandCheckbox = document.getElementById('productbrandCheckbox');
+        const subCheckboxes1 = document.querySelectorAll('.sub-checkboxes1 input[type="checkbox"]');
+
+        productbrandCheckbox.addEventListener('change', function () {
+            if (this.checked) {
+                document.querySelector('.sub-checkboxes1').style.display = 'block';
+            } else {
+                document.querySelector('.sub-checkboxes1').style.display = 'block';
+                subCheckboxes1.forEach(function (subCheckbox) {
+                    subCheckbox.checked = false;
+                });
+            }
+        });
+    </script>
+    
+</body>
+</html>
+
