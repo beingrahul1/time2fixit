@@ -57,7 +57,7 @@ li a {
 
         .vertical-line {
             border-left: 2px solid rgb(78, 197, 248);; /* 2-pixel wide solid black vertical line */
-            height: 800px; /* Adjust the height as needed */
+            height: 350px; /* Adjust the height as needed */
             margin: 0 20px; /* Add some margin for spacing */
         }
 
@@ -109,12 +109,12 @@ li a {
         <div class="container6">
             <div class="container3 card">
                 <!-- <i class="fa fa-search iconstyle">   </i> -->
-                <input class="inputcontainer" type="text" placeholder="Search State or City">
+                <input class="inputcontainer" type="text" [(ngModel)]="searchtxt" placeholder="Search State or City">
                 
             </div>
                 <br>
             <div>
-                <button type="button" class="btn btnstyle">Search</button>
+                <button type="button" class="btn btnstyle" (click)="onSubmit()">Search</button>
             </div>
             
         </div>
@@ -131,29 +131,34 @@ li a {
                 
                         <div style="margin-top: 10px;">
                         
-                        <input type="checkbox" id="shopNameCheckbox">
+                        <input type="checkbox" id="shopNameCheckbox" [(ngModel)]="shopName">
                         <label style="font-weight: bolder; color: rgb(78, 197, 248); margin-left: 10px;" for="shopName">Shop Name </label>
                         
                         
                         <br><br>
-                        <input type="checkbox" id="shopOwnerNameCheckbox">
+                        <input type="checkbox" id="shopOwnerNameCheckbox" [(ngModel)]="shopOwnerName">
                         <label style="font-weight: bolder; color: rgb(78, 197, 248); margin-left: 10px;" for="ShopOwnerName"> Shop Owner Name </label>
                         
                         
                         <br><br>
-                        <input type="checkbox" id="EmailCheckbox">
+                        <input type="checkbox" id="EmailCheckbox" [(ngModel)]="email">
                         <label style="font-weight: bolder; color: rgb(78, 197, 248); margin-left: 10px;" for="Email">Email </label>
                         
                        
                         <br><br>
                 
-                        <input type="checkbox" id="locationCheckbox">
+                        <input type="checkbox" id="locationCheckbox" [(ngModel)]="location">
                         <label style="font-weight: bolder; color: rgb(78, 197, 248); margin-left: 10px;" for="location">Location </label>
                         
-                     
-                        <br>
+                        <br><br>
                 
-                        <div class="sub-checkboxes">
+                        <input type="checkbox" id="contactCheckbox" [(ngModel)]="phoneNumber">
+                        <label style="font-weight: bolder; color: rgb(78, 197, 248); margin-left: 10px;" for="contactNumber"> Phone Number </label>
+                        
+                     
+                        <br><br>
+                
+                        <!-- <div class="sub-checkboxes">
                             <input type="checkbox" id="mumbaiCheckbox" name="location" value="Mumbai">
                             <label style="margin-left: 10px;" for="mumbaiCheckbox">Mumbai</label><br>
                             <input type="checkbox" id="chennaiCheckbox" name="location" value="Chennai">
@@ -162,15 +167,15 @@ li a {
                             <label style="margin-left: 10px;" for="hyderabadCheckbox">Hyderabad</label><br>
                         </div>
                 
-                        <br><br>
+                        <br><br> -->
                 
-                        <input type="checkbox" id="productbrandCheckbox">
+                        <input type="checkbox" id="productbrandCheckbox" [(ngModel)]="productBrand">
                         <label style="font-weight: bolder; color:rgb(78, 197, 248); margin-left: 10px;" for="Brand">Product Brand </label>
                         
                        
-                        <br>
+                        <br><br>
                 
-                        <div class="sub-checkboxes1">
+                        <!-- <div class="sub-checkboxes1">
                             <input type="checkbox" id="xiaomi" name="productbrand" value="Xiaomi">
                             <label style="margin-left: 10px;" for="xiaomi">Xiaomi</label><br>
                             <input type="checkbox" id="apple" name="productbrand" value="Apple">
@@ -178,21 +183,21 @@ li a {
                             <input type="checkbox" id="oneplus" name="productbrand" value="Oneplus">
                             <label style="margin-left: 10px;" for="hyderabadCheckbox">Oneplus</label><br>
                         </div>
-                        <br><br>
-                        <input type="checkbox" id="typeCheckbox">
-                        <label style="font-weight: bolder; color:rgb(78, 197, 248); margin-left: 10px;" for="type"> Type of Device </label>
+                        <br><br> -->
+                        <input type="checkbox" id="typeCheckbox" [(ngModel)]="serviceProduct">
+                        <label style="font-weight: bolder; color:rgb(78, 197, 248); margin-left: 10px;" for="type"> Service Product </label>
                         
                        
-                        <br>
+                        <br><br>
                 
-                        <div class="sub-checkboxes2">
+                        <!-- <div class="sub-checkboxes2">
                             <input type="checkbox" id="laptop" name="type" value="Laptop">
                             <label style="margin-left: 10px;" for="laptopCheckbox">Laptop</label><br>
                             <input type="checkbox" id="mobile" name="type" value="Mobile">
                             <label style="margin-left: 10px;" for="MobileCheckbox">Mobile</label><br>
                             <input type="checkbox" id="desktop" name="type" value="Desktop">
                             <label style="margin-left: 10px;" for="desktopCheckbox">Desktop</label><br>
-                        </div>
+                        </div> -->
                     </div>
                     </form>
                 </div>
@@ -201,22 +206,28 @@ li a {
                 <div class="vertical-line"></div>
             </div>
             <div class="box1">
-                <div class="container4">
-                    <div class="container5">
-                        <p> Service Provider-1 </p>
+                <div *ngFor="let l of listproviders">
+                    <div class="container4">
+                        <div class="container5">
+                            <h3>{{l.shopName}}</h3>
+                            <p>{{l.shopOwnerName}}</p>
+                            <p>{{l.email}}</p>
+                            <p>{{l.phoneNumber}}</p>
+                            <p>{{l.shopAddress}}</p>
+                        </div>
                     </div>
                 </div>
-                <div class="container4">
-                    <div class="container5">
-                        <p> Service Provider-2 </p>
-                    </div>
-                </div>
+                
             </div>
         </div>
     </div>
 
+    <footer class="bg-primary text-white text-center py-3">
+        &copy; time2fixit 2023
+    </footer>
+
     
-    <script>
+    <!-- <script>
         const locationCheckbox = document.getElementById('locationCheckbox');
         const subCheckboxes = document.querySelectorAll('.sub-checkboxes input[type="checkbox"]');
 
@@ -256,7 +267,7 @@ li a {
                 });
             }
         });
-    </script>
+    </script> -->
     
 </body>
 </html>
