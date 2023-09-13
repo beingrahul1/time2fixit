@@ -7,12 +7,12 @@ import com.stackroute.ReviewService.model.UserFeedback;
 public interface FeedbackService {
     List<UserFeedback> getAllFeedbacks();
 
-    UserFeedback getFeedbackById(int id);
+    UserFeedback getFeedbackById(String email);
 
     UserFeedback createFeedback(UserFeedback feedback);
 
-    UserFeedback updateFeedback(int id, UserFeedback feedback);
+    UserFeedback updateFeedback(String email, UserFeedback feedback);
 
-    void deleteFeedback(int id);
+    void deleteFeedback(String email);
 }
 

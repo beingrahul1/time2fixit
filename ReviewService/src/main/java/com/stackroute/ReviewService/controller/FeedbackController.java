@@ -25,9 +25,9 @@ public class FeedbackController {
         return feedbackService.getAllFeedbacks();
     }
 
-    @GetMapping("/{id}")
-    public UserFeedback getFeedbackById(@PathVariable int id) {
-        return feedbackService.getFeedbackById(id);
+    @GetMapping("/{email}")
+    public UserFeedback getFeedbackById(@PathVariable String email) {
+        return feedbackService.getFeedbackById(email);
     }
 
     @PostMapping
@@ -35,13 +35,13 @@ public class FeedbackController {
         return feedbackService.createFeedback(feedback);
     }
 
-    @PutMapping("/{id}")
-    public UserFeedback updateFeedback(@PathVariable int id, @RequestBody UserFeedback feedback) {
-        return feedbackService.updateFeedback(id, feedback);
+    @PutMapping("/{email}")
+    public UserFeedback updateFeedback(@PathVariable String email, @RequestBody UserFeedback feedback) {
+        return feedbackService.updateFeedback(email, feedback);
     }
 
-    @DeleteMapping("/{id}")
-    public void deleteFeedback(@PathVariable int id) {
-        feedbackService.deleteFeedback(id);
+    @DeleteMapping("/{email}")
+    public void deleteFeedback(@PathVariable String email) {
+        feedbackService.deleteFeedback(email);
     }
 }

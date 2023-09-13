@@ -14,7 +14,6 @@ import lombok.NoArgsConstructor;
 public class UserFeedback {
 	
 	@Id
-    private int id;
     private String email;
     private String feedback;
     private int rating;

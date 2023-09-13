@@ -1,0 +1,52 @@
+<!-- <div *ngFor="let feedbackData of feedbackData">
+  <h5> {{feedbackData.email}}</h5>
+  <h4>{{feedbackData.rating}} </h4>
+  <h6>{{feedbackData.feedback}}</h6>
+
+</div> -->
+<link rel="stylesheet" href="feedback-data.component.css">
+<nav class="navbar  bg-primary sticky-top">
+  <button type="button" class="btn btn-light"><a class="navbar-brand" href="#">Time2FixIt</a></button>
+  <div class="btn-left">
+      <button type="button" class="btn btn-left btn-outline-light" routerLink="/feedback">enter a new feedback</button>
+  </div>
+  
+</nav>
+<div class="container registration-container"><br>
+  <div class="row">
+    <div class="col-md-7">
+
+      <div class="container">
+        <div class="row">
+          <div class="col-md-9 mx-auto">
+            <h2>Time2FixIt</h2>
+
+            <p></p>
+
+            <h3>User Feedback and Ratings</h3>
+            <div *ngFor="let feedbackData of feedbackData" class="card mb-3">
+              <div class="card-body">
+
+                <h6 class="card-title">{{ feedbackData.email }}</h6>
+                <h5 class="card-subtitle mb-2 ">{{ feedbackData.rating }} / 5</h5>
+                <h6 class="card-text">{{ feedbackData.feedback }}</h6>
+                <button class="btn btn-outline-danger" (click)="delete(feedbackData.email)"> delete </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Third Div: Image -->
+
+    </div>
+    <br>
+    <div class="col-md-5">
+      <img src="assets/feedbackdata.png" alt="feedback image" class="img-fluid">
+    </div>
+    <br>
+  </div>
+</div>
+<footer class="bg-primary text-white text-center py-3">
+  &copy; time2fixit 2023
+</footer>

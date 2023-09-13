@@ -8,15 +8,25 @@ import { ServiceProviderRegistrationComponent } from './service-provider-registr
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
+
 import { LoginComponent } from './login/login.component';
+
+import { FeedbackComponent } from './feedback/feedback.component';
+import { FeedbackDataComponent } from './feedback-data/feedback-data.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     UserRegistrationComponent,
     ServiceProviderRegistrationComponent,
+
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+
+    HomeComponent,
+    FeedbackComponent,
+    FeedbackDataComponent
   ],
   imports: [
     BrowserModule,

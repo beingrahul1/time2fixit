@@ -24,8 +24,8 @@ public class FeedbackServiceImpl implements FeedbackService {
     }
 
     @Override
-    public UserFeedback getFeedbackById(int id) {
-        return feedbackRepository.findById(id).orElse(null);
+    public UserFeedback getFeedbackById(String email) {
+        return feedbackRepository.findById(email).orElse(null);
     }
 
     @Override
@@ -34,17 +34,17 @@ public class FeedbackServiceImpl implements FeedbackService {
     }
 
     @Override
-    public UserFeedback updateFeedback(int id, UserFeedback feedback) {
-        if (feedbackRepository.existsById(id)) {
-            feedback.setId(id);
+    public UserFeedback updateFeedback(String email, UserFeedback feedback) {
+        if (feedbackRepository.existsById(email)) {
+            feedback.setEmail(email);
             return feedbackRepository.save(feedback);
         }
         return null;
     }
 
     @Override
-    public void deleteFeedback(int id) {
-        feedbackRepository.deleteById(id);
+    public void deleteFeedback(String email) {
+        feedbackRepository.deleteById(email);
     }
 
 	
