@@ -1,0 +1,64 @@
+<link rel="stylesheet" href="updateuser.component.css">
+<nav class="navbar  bg-primary sticky-top">
+  <button type="button" class="btn btn-light"><a class="navbar-brand" href="#">Time2FixIt</a></button>
+  <div class="btn-left">
+    <!-- <button type="button" class="btn btn-left btn-outline-light" routerLink="/showfeedback">show feedback</button> -->
+  </div>
+</nav>
+<div class="container mt-5">
+
+</div>
+<div class="container registration-container"><br>
+  <div class="row">
+    <div class="col-md-5">
+      <img src="assets/updateuser.png" alt="feedback image" class="img-fluid">
+    </div>
+    <div class="col-md-7">
+      <h2>Time2FixIt</h2>
+      <p></p>
+      <form class="mt-4">
+        <!-- First Div: Email, Shop Name, Phone number, securityQuestion, securityAnswere -->
+        <div class="row">
+          <div class="">
+            <div class="">
+              <div class="container">
+                <h2 style="color:rgb(78,197,248)">Update User Details</h2>
+                <form>
+                  <!-- <button type="submit" (click)="edit()" >edit</button> -->
+                  <div class="form-group">
+                    <label style="color:rgb(78,197,248)" class=" label" for="name">Name:</label>
+                    <input type="text" class="form-control" class="input form-control" id="name" name="name" [(ngModel)]="user1.username" required>
+                  </div>
+                  <div class="form-group">
+                    <label style="color:rgb(78,197,248)" class="label" for="phoneNumber">phoneNumber:</label>
+                    <input type="phoneNumber" class="form-control" class="input form-control" id="phoneNumber" name="phoneNumber" [(ngModel)]="user1.phoneNumber"
+                      required>
+                  </div>
+                  <div class="form-group">
+                    <label style="color:rgb(78,197,248)" class="label" for="securityQuestion">securityQuestion:</label>
+                    <input type="securityQuestion" class="form-control" class="input form-control" id="securityQuestion" name="securityQuestion" [(ngModel)]="user1.securityQuestion" required>
+                  </div>
+                  <div class="form-group">
+                    <label style="color:rgb(78,197,248)" class="label" for="securityAnswer">securityAnswer:</label>
+                    <input type="securityAnswer" class="form-control" class="input form-control" id="securityAnswer" name="securityAnswer" [(ngModel)]="user1.securityAnswer" required >
+                  </div>
+
+                  <button type="submit" class="btn btn-primary" (click)="onSubmit()">Save</button>
+                </form>
+              </div>
+              <!-- <div class="col-md-5">
+
+              </div> -->
+            </div>
+
+          </div>
+        </div>
+      </form>
+    </div>
+    <!-- Third Div: Image -->
+  </div>
+  <br>
+</div>
+<footer class="bg-primary text-white text-center py-3">
+  &copy; time2fixit 2023
+</footer>

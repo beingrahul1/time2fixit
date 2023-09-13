@@ -24,4 +24,7 @@ export class UserService {
   {
 return this.http.delete<any>(`http://localhost:2222/feedback/${email}`);
   }
+  updateuser(user1:user){
+    return this.http.post<user>('http://localhost:1234/customer/update',user1)
+  }
 }

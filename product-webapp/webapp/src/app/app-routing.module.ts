@@ -6,6 +6,7 @@ import { LoginComponent } from './login/login.component';
 
 import { FeedbackDataComponent } from './feedback-data/feedback-data.component';
 import { FeedbackComponent } from './feedback/feedback.component';
+import { UpdateuserComponent } from './updateuser/updateuser.component';
 
 import { ServiceProviderRegistrationComponent } from './service-provider-registration/service-provider-registration.component';
 import { UserRegistrationComponent } from './user-registration/user-registration.component';
@@ -19,7 +20,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
 
   { path: 'feedback', component: FeedbackComponent },
-  { path: 'showfeedback', component: FeedbackDataComponent }
+  { path: 'showfeedback', component: FeedbackDataComponent },
+  { path: 'updateuser', component: UpdateuserComponent }
 
 ];
 

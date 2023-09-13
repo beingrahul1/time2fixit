@@ -13,6 +13,7 @@ import { LoginComponent } from './login/login.component';
 
 import { FeedbackComponent } from './feedback/feedback.component';
 import { FeedbackDataComponent } from './feedback-data/feedback-data.component';
+import { UpdateuserComponent } from './updateuser/updateuser.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { FeedbackDataComponent } from './feedback-data/feedback-data.component';
 
     HomeComponent,
     FeedbackComponent,
-    FeedbackDataComponent
+    FeedbackDataComponent,
+    UpdateuserComponent
   ],
   imports: [
     BrowserModule,
