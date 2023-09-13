@@ -22,6 +22,7 @@ import com.stackroute.ServiceProviderService.model.*;
 @RequestMapping("/apis")
 public class ProviderController {
 
+
     @Autowired
     private ProviderService  providerService;
     @GetMapping("/findAll")
@@ -102,6 +103,137 @@ public class ProviderController {
         }
         return listOfProviders;
     }
+    @GetMapping("/matchProvidersWithshopnameAndshopownernameAndaddress")
+    public List<Provider> matchProvidersWithshopnameAndshopownernameAndaddress(@RequestParam String email) throws IOException {
+        SearchResponse<Provider> searchResponse =  providerService.matchProvidersWithshopnameAndshopownernameAndaddress(email);
+        System.out.println(searchResponse.hits().hits().toString());
+
+        List<Hit<Provider>> listOfHits= searchResponse.hits().hits();
+        List<Provider> listOfProviders  = new ArrayList<>();
+        for(Hit<Provider> hit : listOfHits){
+            listOfProviders.add(hit.source());
+        }
+        return listOfProviders;
+    }
+    
+    @GetMapping("/matchProvidersWithshopnameAndshopownernameAndserviceProduct")
+
+    public List<Provider> matchProvidersWithshopnameAndshopownernameAndserviceProduct(@RequestParam String email) throws IOException {
+        SearchResponse<Provider> searchResponse =  providerService.matchProvidersWithshopnameAndshopownernameAndserviceProduct(email);
+        System.out.println(searchResponse.hits().hits().toString());
+
+        List<Hit<Provider>> listOfHits= searchResponse.hits().hits();
+        List<Provider> listOfProviders  = new ArrayList<>();
+        for(Hit<Provider> hit : listOfHits){
+            listOfProviders.add(hit.source());
+        }
+        return listOfProviders;
+    }
+@GetMapping("/matchProvidersWithshopnameAndshopownernameAndproductBrand")
+    public List<Provider> matchProvidersWithshopnameAndshopownernameAndproductBrand(@RequestParam String email) throws IOException {
+        SearchResponse<Provider> searchResponse =  providerService.matchProvidersWithshopnameAndshopownernameAndproductBrand(email);
+        System.out.println(searchResponse.hits().hits().toString());
+
+        List<Hit<Provider>> listOfHits= searchResponse.hits().hits();
+        List<Provider> listOfProviders  = new ArrayList<>();
+        for(Hit<Provider> hit : listOfHits){
+            listOfProviders.add(hit.source());
+        }
+        return listOfProviders;
+    }
+@GetMapping("/matchProvidersWithshopnameAndaddressAndserviceProduct")
+    public List<Provider> matchProvidersWithshopnameAndaddressAndserviceProduct(@RequestParam String email) throws IOException {
+        SearchResponse<Provider> searchResponse =  providerService.matchProvidersWithshopnameAndaddressAndserviceProduct(email);
+        System.out.println(searchResponse.hits().hits().toString());
+
+        List<Hit<Provider>> listOfHits= searchResponse.hits().hits();
+        List<Provider> listOfProviders  = new ArrayList<>();
+        for(Hit<Provider> hit : listOfHits){
+            listOfProviders.add(hit.source());
+        }
+        return listOfProviders;
+    }
+@GetMapping("/matchProvidersWithshopnameAndaddressAndproductBrand")
+    public List<Provider> matchProvidersWithshopnameAndaddressAndproductBrand(@RequestParam String email) throws IOException {
+        SearchResponse<Provider> searchResponse =  providerService.matchProvidersWithshopnameAndaddressAndproductBrand(email);
+        System.out.println(searchResponse.hits().hits().toString());
+
+        List<Hit<Provider>> listOfHits= searchResponse.hits().hits();
+        List<Provider> listOfProviders  = new ArrayList<>();
+        for(Hit<Provider> hit : listOfHits){
+            listOfProviders.add(hit.source());
+        }
+        return listOfProviders;
+    }
+
+@GetMapping("/matchProvidersWithshopnameAndserviceProductAndproductBrand")
+    public List<Provider> matchProvidersWithshopnameAndserviceProductAndproductBrand(@RequestParam String email) throws IOException {
+        SearchResponse<Provider> searchResponse =  providerService.matchProvidersWithshopnameAndserviceProductAndproductBrand(email);
+        System.out.println(searchResponse.hits().hits().toString());
+
+        List<Hit<Provider>> listOfHits= searchResponse.hits().hits();
+        List<Provider> listOfProviders  = new ArrayList<>();
+        for(Hit<Provider> hit : listOfHits){
+            listOfProviders.add(hit.source());
+        }
+        return listOfProviders;
+    }
+
+@GetMapping("/matchProvidersWithshopownernameAndaddressAndserviceProduct")
+    public List<Provider> matchProvidersWithshopownernameAndaddressAndserviceProduct(@RequestParam String email) throws IOException {
+        SearchResponse<Provider> searchResponse =  providerService.matchProvidersWithshopownernameAndaddressAndserviceProduct(email);
+        System.out.println(searchResponse.hits().hits().toString());
+
+        List<Hit<Provider>> listOfHits= searchResponse.hits().hits();
+        List<Provider> listOfProviders  = new ArrayList<>();
+        for(Hit<Provider> hit : listOfHits){
+            listOfProviders.add(hit.source());
+        }
+        return listOfProviders;
+    }
+
+@GetMapping("/matchProvidersWithshopownernameAndaddressAndproductBrand")
+    public List<Provider> matchProvidersWithshopownernameAndaddressAndproductBrand(@RequestParam String email) throws IOException {
+        SearchResponse<Provider> searchResponse =  providerService.matchProvidersWithshopownernameAndaddressAndproductBrand(email);
+        System.out.println(searchResponse.hits().hits().toString());
+
+        List<Hit<Provider>> listOfHits= searchResponse.hits().hits();
+        List<Provider> listOfProviders  = new ArrayList<>();
+        for(Hit<Provider> hit : listOfHits){
+            listOfProviders.add(hit.source());
+        }
+        return listOfProviders;
+    }
+
+@GetMapping("/matchProvidersWithshopownernameAndserviceProductAndproductBrand")
+    public List<Provider> matchProvidersWithshopownernameAndserviceProductAndproductBrand(@RequestParam String email) throws IOException {
+        SearchResponse<Provider> searchResponse =  providerService.matchProvidersWithshopownernameAndserviceProductAndproductBrand(email);
+        System.out.println(searchResponse.hits().hits().toString());
+
+        List<Hit<Provider>> listOfHits= searchResponse.hits().hits();
+        List<Provider> listOfProviders  = new ArrayList<>();
+        for(Hit<Provider> hit : listOfHits){
+            listOfProviders.add(hit.source());
+        }
+        return listOfProviders;
+    }
+
+@GetMapping("/matchProvidersWithaddressAndserviceProductAndproductBrand")
+    public List<Provider> matchProvidersWithaddressAndserviceProductAndproductBrand(@RequestParam String email) throws IOException {
+        SearchResponse<Provider> searchResponse =  providerService.matchProvidersWithaddressAndserviceProductAndproductBrand(email);
+        System.out.println(searchResponse.hits().hits().toString());
+
+        List<Hit<Provider>> listOfHits= searchResponse.hits().hits();
+        List<Provider> listOfProviders  = new ArrayList<>();
+        for(Hit<Provider> hit : listOfHits){
+            listOfProviders.add(hit.source());
+        }
+        return listOfProviders;
+    }
+
+
+
+
 
     @GetMapping("/matchProvidersWithshopnameAndcontactnumber")
     public List<Provider> matchProvidersWithshopnameAndcontactnumber(@RequestParam String email) throws IOException {
@@ -128,6 +260,11 @@ public class ProviderController {
         }
         return listOfProviders;
     }
+    @PutMapping("/update")
+    public Provider updateProvider(@RequestBody  Provider provider){
+       return providerService.updateProvider(provider, provider.getEmail());
+    }
+    
     @GetMapping("/matchProvidersWithshopownernameserviceProduct")
     public List<Provider> matchProvidersWithshopownernameserviceProduct(@RequestParam String email) throws IOException {
         SearchResponse<Provider> searchResponse =  providerService.matchProvidersWithshopownernameserviceProduct(email);
@@ -335,5 +472,141 @@ public class ProviderController {
         }
         return listOfProducts;
     }
+    @GetMapping("/matchProvidersWithshopnameAndshopownernameAndaddressAndserviceProduct")
+    public List<Provider> matchProvidersWithshopnameAndshopownernameAndaddressAndserviceProduct(@RequestParam String email) throws IOException {
+        SearchResponse<Provider> searchResponse =  providerService.matchProvidersWithshopnameAndshopownernameAndaddressAndserviceProduct(email);
+        System.out.println(searchResponse.hits().hits().toString());
 
+        List<Hit<Provider>> listOfHits= searchResponse.hits().hits();
+        List<Provider> listOfProviders  = new ArrayList<>();
+        for(Hit<Provider> hit : listOfHits){
+            listOfProviders.add(hit.source());
+        }
+        return listOfProviders;
+    }
+
+    @GetMapping("/matchProvidersWithshopnameAndshopownernameAndaddressAndproductBrand")
+    public List<Provider> matchProvidersWithshopnameAndshopownernameAndaddressAndproductBrand(@RequestParam String email) throws IOException {
+        SearchResponse<Provider> searchResponse =  providerService.matchProvidersWithshopnameAndshopownernameAndaddressAndproductBrand(email);
+        System.out.println(searchResponse.hits().hits().toString());
+
+        List<Hit<Provider>> listOfHits= searchResponse.hits().hits();
+        List<Provider> listOfProviders  = new ArrayList<>();
+        for(Hit<Provider> hit : listOfHits){
+            listOfProviders.add(hit.source());
+        }
+        return listOfProviders;
+    }
+
+    @GetMapping("/matchProvidersWithshopnameAndshopownernameAndserviceProductAndproductBrand")
+    public List<Provider> matchProvidersWithshopnameAndshopownernameAndserviceProductAndproductBrand(@RequestParam String email) throws IOException {
+        SearchResponse<Provider> searchResponse =  providerService.matchProvidersWithshopnameAndshopownernameAndserviceProductAndproductBrand(email);
+        System.out.println(searchResponse.hits().hits().toString());
+
+        List<Hit<Provider>> listOfHits= searchResponse.hits().hits();
+        List<Provider> listOfProviders  = new ArrayList<>();
+        for(Hit<Provider> hit : listOfHits){
+            listOfProviders.add(hit.source());
+        }
+        return listOfProviders;
+    }
+
+    @GetMapping("/matchProvidersWithshopnameAndaddressAndserviceProductAndproductBrand")
+    public List<Provider> matchProvidersWithshopnameAndaddressAndserviceProductAndproductBrand(@RequestParam String email) throws IOException {
+        SearchResponse<Provider> searchResponse =  providerService.matchProvidersWithshopnameAndaddressAndserviceProductAndproductBrand(email);
+        System.out.println(searchResponse.hits().hits().toString());
+
+        List<Hit<Provider>> listOfHits= searchResponse.hits().hits();
+        List<Provider> listOfProviders  = new ArrayList<>();
+        for(Hit<Provider> hit : listOfHits){
+            listOfProviders.add(hit.source());
+        }
+        return listOfProviders;
+    }
+
+    @GetMapping("/matchProvidersWithshopownernameAndaddressAndserviceProductAndproductBrand")
+    public List<Provider> matchProvidersWithshopownernameAndaddressAndserviceProductAndproductBrand(@RequestParam String email) throws IOException {
+        SearchResponse<Provider> searchResponse =  providerService.matchProvidersWithshopownernameAndaddressAndserviceProductAndproductBrand(email);
+        System.out.println(searchResponse.hits().hits().toString());
+
+        List<Hit<Provider>> listOfHits= searchResponse.hits().hits();
+        List<Provider> listOfProviders  = new ArrayList<>();
+        for(Hit<Provider> hit : listOfHits){
+            listOfProviders.add(hit.source());
+        }
+        return listOfProviders;
+    }
+    @GetMapping("/matchProvidersWithaddress")
+    public List<Provider> matchProvidersWithaddress(@RequestParam String email) throws IOException {
+        SearchResponse<Provider> searchResponse =  providerService.matchProvidersWithaddress(email);
+        System.out.println(searchResponse.hits().hits().toString());
+
+        List<Hit<Provider>> listOfHits= searchResponse.hits().hits();
+        List<Provider> listOfProviders  = new ArrayList<>();
+        for(Hit<Provider> hit : listOfHits){
+            listOfProviders.add(hit.source());
+        }
+        return listOfProviders;
+    }
+
+
+
+
+@GetMapping("/matchProvidersWithserviceProduct")
+    public List<Provider> matchProvidersWithserviceProduct(@RequestParam String email) throws IOException {
+        SearchResponse<Provider> searchResponse =  providerService.matchProvidersWithserviceProduct(email);
+        System.out.println(searchResponse.hits().hits().toString());
+
+        List<Hit<Provider>> listOfHits= searchResponse.hits().hits();
+        List<Provider> listOfProviders  = new ArrayList<>();
+        for(Hit<Provider> hit : listOfHits){
+            listOfProviders.add(hit.source());
+        }
+        return listOfProviders;
+    }
+
+
+
+
+@GetMapping("/matchProvidersWithproductBrand")
+    public List<Provider> matchProvidersWithproductBrand(@RequestParam String email) throws IOException {
+        SearchResponse<Provider> searchResponse =  providerService.matchProvidersWithproductBrand(email);
+        System.out.println(searchResponse.hits().hits().toString());
+
+        List<Hit<Provider>> listOfHits= searchResponse.hits().hits();
+        List<Provider> listOfProviders  = new ArrayList<>();
+        for(Hit<Provider> hit : listOfHits){
+            listOfProviders.add(hit.source());
+        }
+        return listOfProviders;
+    }
+
+
+@GetMapping("/matchProvidersWithshopname")
+    public List<Provider> matchProvidersWithshopname(@RequestParam String email) throws IOException {
+        SearchResponse<Provider> searchResponse =  providerService.matchProvidersWithshopname(email);
+        System.out.println(searchResponse.hits().hits().toString());
+
+        List<Hit<Provider>> listOfHits= searchResponse.hits().hits();
+        List<Provider> listOfProviders  = new ArrayList<>();
+        for(Hit<Provider> hit : listOfHits){
+            listOfProviders.add(hit.source());
+        }
+        return listOfProviders;
+    }
+
+
+
+@GetMapping("/matchProvidersWithshopownername")
+    public List<Provider> matchProvidersWithshopownername(@RequestParam String email) throws IOException {
+        SearchResponse<Provider> searchResponse =  providerService.matchProvidersWithshopownername(email);
+        System.out.println(searchResponse.hits().hits().toString());
+
+        List<Hit<Provider>> listOfHits= searchResponse.hits().hits();
+        List<Provider> listOfProviders  = new ArrayList<>();
+        for(Hit<Provider> hit : listOfHits){
+            listOfProviders.add(hit.source());
+        }
+        return listOfProviders;
+    }
 }

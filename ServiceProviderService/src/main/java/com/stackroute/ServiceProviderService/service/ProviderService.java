@@ -28,7 +28,6 @@ import java.util.Optional;
 
 @Service
 public class ProviderService {
-
     @Autowired
     private  ProviderRepo providerRepo;
    
@@ -65,6 +64,39 @@ public class ProviderService {
     }
     public SearchResponse<Provider> matchProvidersWithEmail(String email) throws IOException {
         Supplier<Query> supplier  = ProviderUtil.supplierWithEmail(email);
+        SearchResponse<Provider> searchResponse = elasticsearchClient.search(s->s.index("providers").query(supplier.get()),Provider.class);
+        System.out.println("elasticsearch query is "+supplier.get().toString());
+        return searchResponse;
+    }
+    public SearchResponse<Provider> matchProvidersWithaddress(String email) throws IOException {
+        Supplier<Query> supplier  = ProviderUtil.supplierWithaddress(email);
+        SearchResponse<Provider> searchResponse = elasticsearchClient.search(s->s.index("providers").query(supplier.get()),Provider.class);
+        System.out.println("elasticsearch query is "+supplier.get().toString());
+        return searchResponse;
+    }
+
+    public SearchResponse<Provider> matchProvidersWithserviceProduct(String email) throws IOException {
+        Supplier<Query> supplier  = ProviderUtil.supplierWithserviceProduct(email);
+        SearchResponse<Provider> searchResponse = elasticsearchClient.search(s->s.index("providers").query(supplier.get()),Provider.class);
+        System.out.println("elasticsearch query is "+supplier.get().toString());
+        return searchResponse;
+    }
+
+    public SearchResponse<Provider> matchProvidersWithproductBrand(String email) throws IOException {
+        Supplier<Query> supplier  = ProviderUtil.supplierWithproductBrand(email);
+        SearchResponse<Provider> searchResponse = elasticsearchClient.search(s->s.index("providers").query(supplier.get()),Provider.class);
+        System.out.println("elasticsearch query is "+supplier.get().toString());
+        return searchResponse;
+    }
+
+    public SearchResponse<Provider> matchProvidersWithshopname(String email) throws IOException {
+        Supplier<Query> supplier  = ProviderUtil.supplierWithshopname(email);
+        SearchResponse<Provider> searchResponse = elasticsearchClient.search(s->s.index("providers").query(supplier.get()),Provider.class);
+        System.out.println("elasticsearch query is "+supplier.get().toString());
+        return searchResponse;
+    }
+    public SearchResponse<Provider> matchProvidersWithshopownername(String email) throws IOException {
+        Supplier<Query> supplier  = ProviderUtil.supplierWithshopownername(email);
         SearchResponse<Provider> searchResponse = elasticsearchClient.search(s->s.index("providers").query(supplier.get()),Provider.class);
         System.out.println("elasticsearch query is "+supplier.get().toString());
         return searchResponse;
@@ -200,6 +232,110 @@ public class ProviderService {
          System.out.println("elasticsearch query is "+supplier.get().toString());
          return searchResponse;}
      
+
+     public SearchResponse<Provider> matchProvidersWithshopnameAndshopownernameAndaddress(String query) throws IOException {
+         Supplier<Query> supplier  = ProviderUtil.supplier();
+        SearchResponse<Provider> searchResponse = elasticsearchClient.search(s->s.query(supplier.get()),Provider.class);
+         System.out.println("elasticsearch query is "+supplier.get().toString());
+         return searchResponse;
+     }
+   
+
+
+     public SearchResponse<Provider> matchProvidersWithshopnameAndshopownernameAndserviceProduct(String query) throws IOException {
+         Supplier<Query> supplier  = ProviderUtil.supplier();
+        SearchResponse<Provider> searchResponse = elasticsearchClient.search(s->s.query(supplier.get()),Provider.class);
+         System.out.println("elasticsearch query is "+supplier.get().toString());
+         return searchResponse;
+     }
+
+
+     public SearchResponse<Provider> matchProvidersWithshopnameAndshopownernameAndproductBrand(String query) throws IOException {
+         Supplier<Query> supplier  = ProviderUtil.supplier();
+        SearchResponse<Provider> searchResponse = elasticsearchClient.search(s->s.query(supplier.get()),Provider.class);
+         System.out.println("elasticsearch query is "+supplier.get().toString());
+         return searchResponse;
+     }
+
+     public SearchResponse<Provider> matchProvidersWithshopnameAndaddressAndserviceProduct(String query) throws IOException {
+         Supplier<Query> supplier  = ProviderUtil.supplier();
+        SearchResponse<Provider> searchResponse = elasticsearchClient.search(s->s.query(supplier.get()),Provider.class);
+         System.out.println("elasticsearch query is "+supplier.get().toString());
+         return searchResponse;
+     }
+
+     public SearchResponse<Provider> matchProvidersWithshopnameAndaddressAndproductBrand(String query) throws IOException {
+         Supplier<Query> supplier  = ProviderUtil.supplier();
+        SearchResponse<Provider> searchResponse = elasticsearchClient.search(s->s.query(supplier.get()),Provider.class);
+         System.out.println("elasticsearch query is "+supplier.get().toString());
+         return searchResponse;
+     }
+
+     public SearchResponse<Provider> matchProvidersWithshopnameAndserviceProductAndproductBrand(String query) throws IOException {
+         Supplier<Query> supplier  = ProviderUtil.supplier();
+        SearchResponse<Provider> searchResponse = elasticsearchClient.search(s->s.query(supplier.get()),Provider.class);
+         System.out.println("elasticsearch query is "+supplier.get().toString());
+         return searchResponse;
+     }
+
+     public SearchResponse<Provider> matchProvidersWithshopownernameAndaddressAndserviceProduct(String query) throws IOException {
+         Supplier<Query> supplier  = ProviderUtil.supplier();
+        SearchResponse<Provider> searchResponse = elasticsearchClient.search(s->s.query(supplier.get()),Provider.class);
+         System.out.println("elasticsearch query is "+supplier.get().toString());
+         return searchResponse;
+     }
+
+     public SearchResponse<Provider> matchProvidersWithshopownernameAndaddressAndproductBrand(String query) throws IOException {
+         Supplier<Query> supplier  = ProviderUtil.supplier();
+        SearchResponse<Provider> searchResponse = elasticsearchClient.search(s->s.query(supplier.get()),Provider.class);
+         System.out.println("elasticsearch query is "+supplier.get().toString());
+         return searchResponse;
+     }
+
+     public SearchResponse<Provider> matchProvidersWithshopownernameAndserviceProductAndproductBrand(String query) throws IOException {
+         Supplier<Query> supplier  = ProviderUtil.supplier();
+        SearchResponse<Provider> searchResponse = elasticsearchClient.search(s->s.query(supplier.get()),Provider.class);
+         System.out.println("elasticsearch query is "+supplier.get().toString());
+         return searchResponse;
+     }
+
+     public SearchResponse<Provider> matchProvidersWithaddressAndserviceProductAndproductBrand(String query) throws IOException {
+         Supplier<Query> supplier  = ProviderUtil.supplier();
+        SearchResponse<Provider> searchResponse = elasticsearchClient.search(s->s.query(supplier.get()),Provider.class);
+         System.out.println("elasticsearch query is "+supplier.get().toString());
+         return searchResponse;
+     }
+     public SearchResponse<Provider> matchProvidersWithshopnameAndshopownernameAndaddressAndserviceProduct(String query) throws IOException {
+    	    Supplier<Query> supplier = ProviderUtil.supplier();
+    	    SearchResponse<Provider> searchResponse = elasticsearchClient.search(s -> s.query(supplier.get()), Provider.class);
+    	    System.out.println("elasticsearch query is " + supplier.get().toString());
+    	    return searchResponse;
+    	}
+     public SearchResponse<Provider> matchProvidersWithshopnameAndshopownernameAndaddressAndproductBrand(String query) throws IOException {
+    	    Supplier<Query> supplier = ProviderUtil.supplier();
+    	    SearchResponse<Provider> searchResponse = elasticsearchClient.search(s -> s.query(supplier.get()), Provider.class);
+    	    System.out.println("elasticsearch query is " + supplier.get().toString());
+    	    return searchResponse;
+    	}
+     public SearchResponse<Provider> matchProvidersWithshopnameAndshopownernameAndserviceProductAndproductBrand(String query) throws IOException {
+    	    Supplier<Query> supplier = ProviderUtil.supplier();
+    	    SearchResponse<Provider> searchResponse = elasticsearchClient.search(s -> s.query(supplier.get()), Provider.class);
+    	    System.out.println("elasticsearch query is " + supplier.get().toString());
+    	    return searchResponse;
+    	}
+     public SearchResponse<Provider> matchProvidersWithshopnameAndaddressAndserviceProductAndproductBrand(String query) throws IOException {
+    	    Supplier<Query> supplier = ProviderUtil.supplier();
+    	    SearchResponse<Provider> searchResponse = elasticsearchClient.search(s -> s.query(supplier.get()), Provider.class);
+    	    System.out.println("elasticsearch query is " + supplier.get().toString());
+    	    return searchResponse;
+    	}
+
+     public SearchResponse<Provider> matchProvidersWithshopownernameAndaddressAndserviceProductAndproductBrand(String query) throws IOException {
+    	    Supplier<Query> supplier = ProviderUtil.supplier();
+    	    SearchResponse<Provider> searchResponse = elasticsearchClient.search(s -> s.query(supplier.get()), Provider.class);
+    	    System.out.println("elasticsearch query is " + supplier.get().toString());
+    	    return searchResponse;
+    	}
 
 
 
