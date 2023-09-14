@@ -1,0 +1,56 @@
+<app-navbar></app-navbar>
+<section class="about-section">
+    <div class="container">
+      <h2>About Us</h2>
+      <p>
+        Time2FixIt is your one-stop destination for all your gadget repair needs. With years of experience
+        in the industry, our team of experts is dedicated to providing high-quality repair services for
+        smartphones, tablets, and other electronic devices.
+      </p>
+      <p>
+        Our mission is to make your life easier by fixing your devices quickly and efficiently. We understand
+        how important your gadgets are in today's fast-paced world, and we strive to ensure that you can get
+        back to using your devices as soon as possible.
+      </p>
+      <p>
+        At Time2FixIt, customer satisfaction is our top priority. We take pride in our work and offer a
+        satisfaction guarantee on all our repairs. If you have any questions or need assistance, our friendly
+        customer support team is here to help you.
+      </p>
+    </div>
+</section>
+
+<section class="meet-our-team-section">
+    <div class="container">
+      <h2>Meet Our Team!</h2>
+      <div class="team-members">
+        <div class="team-member" *ngFor="let member of teamMembers">
+            <img [src]="member.avatarUrl" alt="{{ member.name }}" />
+            <h3>{{ member.name }}</h3>
+            <p>{{ member.position }}</p>
+            <p>{{ member.company }}</p>
+            <div class="social-links">
+                <a *ngIf="member.linkedIn" [href]="member.linkedIn" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a *ngIf="member.instagram" [href]="member.instagram" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </div>   
+      </div>
+    </div>
+</section>
+
+<section class="contact-us-section">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <p>We'd love to hear from you. Feel free to get in touch!</p>
+      <div class="contact-form">
+        <a href="mailto:time2fixitcgi@gmail.com"><button mat-raised-button class="mail-button">Mail Us</button></a>
+      </div>
+    </div>
+</section>
+
+<app-footer></app-footer>
+  

@@ -10,6 +10,9 @@ import { UpdateuserComponent } from './updateuser/updateuser.component';
 
 import { ServiceProviderRegistrationComponent } from './service-provider-registration/service-provider-registration.component';
 import { UserRegistrationComponent } from './user-registration/user-registration.component';
+import { HomeserviceComponent } from './homeservice/homeservice.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -21,7 +24,11 @@ const routes: Routes = [
 
   { path: 'feedback', component: FeedbackComponent },
   { path: 'showfeedback', component: FeedbackDataComponent },
-  { path: 'updateuser', component: UpdateuserComponent }
+  { path: 'updateuser', component: UpdateuserComponent },
+  { path: 'homeservice', component: HomeserviceComponent },
+  { path: 'navbar', component: NavbarComponent },
+  { path: 'aboutus', component: AboutusComponent },
+  
 
 ];
 

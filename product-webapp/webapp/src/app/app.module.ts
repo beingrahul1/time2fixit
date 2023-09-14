@@ -14,6 +14,10 @@ import { LoginComponent } from './login/login.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { FeedbackDataComponent } from './feedback-data/feedback-data.component';
 import { UpdateuserComponent } from './updateuser/updateuser.component';
+import { HomeserviceComponent } from './homeservice/homeservice.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -28,7 +32,11 @@ import { UpdateuserComponent } from './updateuser/updateuser.component';
     HomeComponent,
     FeedbackComponent,
     FeedbackDataComponent,
-    UpdateuserComponent
+    UpdateuserComponent,
+    HomeserviceComponent,
+    NavbarComponent,
+    AboutusComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

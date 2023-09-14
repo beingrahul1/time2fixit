@@ -23,11 +23,16 @@
   
                         <div class="form-group">
                     
-                            <select class="form-control input" id="login"  name="login">
+                            <!-- <select class="form-control input" id="login"  name="login">
                                 <option value="" disabled selected>Login as </option>
                                 <option class="form-control" value="user" name="option1">User</option>
                                 <option value="service-provider" name="option2">Service provider</option>
-                            </select>
+                            </select> -->
+                            <select class="form-control input" id="login" name="login" [(ngModel)]="user1">
+                                <option value="" disabled selected>Login as</option>
+                                <option value="user">User</option>
+                                <option value="service-provider">Service provider</option>
+                              </select>
                         </div>
   
                         <div class="form-group">
