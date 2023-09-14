@@ -81,7 +81,7 @@ export class AboutusComponent {
       instagram: ''
     },
     {
-      name: 'Anuraam Lord',
+      name: 'Anuraam',
       position: 'Software Engineer',
       company: 'CGI',
       avatarUrl: 'assets/user.jpeg',
