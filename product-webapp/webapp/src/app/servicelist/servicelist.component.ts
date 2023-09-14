@@ -27,7 +27,7 @@ export class ServicelistComponent implements OnInit{
 
   onSubmit()
   {
-    if(this.email)
+    if(this.location == false && this.email && this.phoneNumber == false && this.shopName == false && this.shopOwnerName ==false && this.productBrand == false && this.serviceProduct == false)
     {
       this.serviceprovider.getByEmail().subscribe(
         data=>{
@@ -39,7 +39,7 @@ export class ServicelistComponent implements OnInit{
       )
     }
 
-    if(this.shopName && this.shopOwnerName)
+    if(this.location == false && this.email == false && this.phoneNumber == false && this.shopName && this.shopOwnerName && this.productBrand == false && this.serviceProduct == false)
     {
       this.serviceprovider.getByshopNameandShopOwnerName().subscribe(
         data=>{
@@ -51,7 +51,7 @@ export class ServicelistComponent implements OnInit{
       )
     }
 
-    if(this.shopName && this.serviceProduct)
+    if(this.location == false && this.email == false && this.phoneNumber == false && this.shopName && this.shopOwnerName ==false && this.productBrand == false && this.serviceProduct)
     {
       this.serviceprovider.getByShopNameandServiceProduct().subscribe(
         data=>{
@@ -63,7 +63,7 @@ export class ServicelistComponent implements OnInit{
       )
     }
 
-    if(this.shopName && this.productBrand)
+    if(this.location == false && this.email == false && this.phoneNumber == false && this.shopName && this.shopOwnerName ==false && this.productBrand && this.serviceProduct == false)
     {
       this.serviceprovider.getByShopNameandProductBrand().subscribe(
         data=>{
@@ -75,7 +75,7 @@ export class ServicelistComponent implements OnInit{
       )
     }
 
-    if(this.shopName && this.location)
+    if(this.location && this.email == false && this.phoneNumber == false && this.shopName && this.shopOwnerName ==false && this.productBrand == false && this.serviceProduct == false)
     {
       this.serviceprovider.getByShopNameandAddress().subscribe(
         data=>{
@@ -87,7 +87,7 @@ export class ServicelistComponent implements OnInit{
       )
     }
 
-    if(this.shopName && this.phoneNumber)
+    if(this.location == false && this.email == false && this.phoneNumber && this.shopName && this.shopOwnerName ==false && this.productBrand == false && this.serviceProduct == false)
     {
       this.serviceprovider.getByShopNameandContactNumber().subscribe(
         data=>{
@@ -99,7 +99,7 @@ export class ServicelistComponent implements OnInit{
       )
     }
 
-    if(this.shopName && this.email)
+    if(this.location == false && this.email && this.phoneNumber == false && this.shopName && this.shopOwnerName ==false && this.productBrand == false && this.serviceProduct == false)
     {
       this.serviceprovider.getByShopNameandEmail().subscribe(
         data=>{
@@ -111,7 +111,7 @@ export class ServicelistComponent implements OnInit{
       )
     }
 
-    if(this.shopOwnerName && this.serviceProduct)
+    if(this.location == false && this.email == false && this.phoneNumber == false && this.shopName == false && this.shopOwnerName && this.productBrand == false && this.serviceProduct)
     {
       this.serviceprovider.getByShopOwnerNameandServiceProduct().subscribe(
         data=>{
@@ -123,7 +123,7 @@ export class ServicelistComponent implements OnInit{
       )
     }
 
-    if(this.shopOwnerName && this.productBrand)
+    if(this.location == false && this.email == false && this.phoneNumber == false && this.shopName == false && this.shopOwnerName && this.productBrand && this.serviceProduct == false)
     {
       this.serviceprovider.getByShopOwnerNameandProductBrand().subscribe(
         data=>{
@@ -134,7 +134,7 @@ export class ServicelistComponent implements OnInit{
         }
       )
     }
-    if(this.shopOwnerName && this.phoneNumber)
+    if(this.location == false && this.email == false && this.phoneNumber && this.shopName == false && this.shopOwnerName && this.productBrand == false && this.serviceProduct == false)
     {
       this.serviceprovider.getByShopOwnerNameandcontactNumber().subscribe(
         data=>{
@@ -146,7 +146,7 @@ export class ServicelistComponent implements OnInit{
       )
     }
 
-    if(this.shopOwnerName && this.email)
+    if(this.location == false && this.email && this.phoneNumber == false && this.shopName == false && this.shopOwnerName && this.productBrand == false && this.serviceProduct == false)
     {
       this.serviceprovider.getByShopOwnerNameandEmail().subscribe(
         data=>{
@@ -158,7 +158,7 @@ export class ServicelistComponent implements OnInit{
       )
     }
 
-    if(this.serviceProduct && this.location)
+    if(this.location && this.email == false && this.phoneNumber == false && this.shopName == false && this.shopOwnerName ==false && this.productBrand == false && this.serviceProduct)
     {
       this.serviceprovider.getByServiceProductandAddress().subscribe(
         data=>{
@@ -170,7 +170,7 @@ export class ServicelistComponent implements OnInit{
       )
     }
 
-    if(this.productBrand && this.location)
+    if(this.location && this.email == false && this.phoneNumber == false && this.shopName == false && this.shopOwnerName ==false && this.productBrand && this.serviceProduct == false)
     {
       this.serviceprovider.getByProductBrandandAddress().subscribe(
         data=>{
@@ -182,7 +182,7 @@ export class ServicelistComponent implements OnInit{
       )
     }
 
-    if(this.serviceProduct && this.phoneNumber)
+    if(this.location == false && this.email == false && this.phoneNumber && this.shopName == false && this.shopOwnerName ==false && this.productBrand == false && this.serviceProduct)
     {
       this.serviceprovider.getByServiceProductandcontactNumber().subscribe(
         data=>{
@@ -193,7 +193,7 @@ export class ServicelistComponent implements OnInit{
         }
       )
     }
-    if(this.productBrand && this.phoneNumber)
+    if(this.location == false && this.email == false && this.phoneNumber && this.shopName == false && this.shopOwnerName ==false && this.productBrand && this.serviceProduct == false)
     {
       this.serviceprovider.getByProductBrandandcontactNumber().subscribe(
         data=>{
@@ -204,7 +204,7 @@ export class ServicelistComponent implements OnInit{
         }
       )
     }
-    if(this.serviceProduct && this.email)
+    if(this.location == false && this.email && this.phoneNumber == false && this.shopName == false && this.shopOwnerName ==false && this.productBrand == false && this.serviceProduct)
     {
       this.serviceprovider.getByServiceProductandEmail().subscribe(
         data=>{
@@ -216,7 +216,7 @@ export class ServicelistComponent implements OnInit{
       )
     }
 
-    if(this.productBrand && this.email)
+    if(this.location == false && this.email && this.phoneNumber == false && this.shopName == false && this.shopOwnerName ==false && this.productBrand && this.serviceProduct == false)
     {
       this.serviceprovider.getByProductBrandandEmail().subscribe(
         data=>{
@@ -228,7 +228,7 @@ export class ServicelistComponent implements OnInit{
       )
     }
 
-    if(this.serviceProduct && this.productBrand)
+    if(this.location == false && this.email == false && this.phoneNumber == false && this.shopName == false && this.shopOwnerName == false && this.productBrand && this.serviceProduct)
     {
       this.serviceprovider.getByServiceProductandProductBrand().subscribe(
         data=>{
@@ -240,7 +240,7 @@ export class ServicelistComponent implements OnInit{
       )
     }
 
-    if(this.location && this.phoneNumber)
+    if(this.location && this.email == false && this.phoneNumber && this.shopName == false && this.shopOwnerName ==false && this.productBrand == false && this.serviceProduct == false)
     {
       this.serviceprovider.getByAddressandContactNumber().subscribe(
         data=>{
@@ -252,7 +252,7 @@ export class ServicelistComponent implements OnInit{
       )
     }
 
-    if(this.location && this.email)
+    if(this.location && this.email && this.phoneNumber == false && this.shopName == false && this.shopOwnerName ==false && this.productBrand == false && this.serviceProduct == false)
     {
       this.serviceprovider.getByAddressandEmail().subscribe(
         data=>{
@@ -266,7 +266,7 @@ export class ServicelistComponent implements OnInit{
 
     if(this.location && this.email && this.phoneNumber && this.shopName && this.shopOwnerName && this.productBrand && this.serviceProduct)
     {
-      this.serviceprovider.getByAddressandEmail().subscribe(
+      this.serviceprovider.serviceProviderList().subscribe(
         data=>{
           this.listofproviders = data;
         },
