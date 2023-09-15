@@ -8,8 +8,10 @@ import { ServiceProviderRegistrationComponent } from './service-provider-registr
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { LoginComponent } from './login/login.component';
+import { ProviderUpdateComponent } from './provider-update/provider-update.component';
 
 import { FeedbackComponent } from './feedback/feedback.component';
 import { FeedbackDataComponent } from './feedback-data/feedback-data.component';
@@ -28,7 +30,7 @@ import { FooterComponent } from './footer/footer.component';
 
     HomeComponent,
     LoginComponent,
-
+ProviderUpdateComponent,
     HomeComponent,
     FeedbackComponent,
     FeedbackDataComponent,
