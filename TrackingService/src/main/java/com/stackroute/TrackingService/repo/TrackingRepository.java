@@ -8,4 +8,6 @@ public interface TrackingRepository extends MongoRepository<Tracking, Integer> {
 
 	Tracking findByBookingId(int bookingId);
 
+	Tracking findByuserEmail(String userEmail);
+
 }

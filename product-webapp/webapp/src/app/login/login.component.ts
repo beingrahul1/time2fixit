@@ -34,12 +34,20 @@ export class LoginComponent {
           // Successfully logged in
           console.log('Login successful:', user);
           this.authService.setIsAuthenticated();
+<<<<<<< HEAD
   
           if (this.user1 === 'user') {
             this.router.navigate(['/home'], { queryParams: { email: this.email } });
           } else if (this.user1 === 'service-provider') {
             this.router.navigate(['/homeservice'], { queryParams: { email: this.email } });
           }
+=======
+         this.router.navigate(['/home'], { queryParams: { email: this.email } });
+          //this.router.navigate(['/home']);
+          alert('Login successful');
+          localStorage.setItem('userEmail', this.email);
+          
+>>>>>>> 8ef51d0 (Tracking)
         } else {
           // Invalid email or password
           console.log('Invalid email or password', user);

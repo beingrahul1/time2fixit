@@ -24,7 +24,8 @@ public class Tracking {
 	private String issueType;
 	private String issueDescription;
 	private String expectedTime;
-	private String costDate;
+	private int cost;
+	private String date;
 	
 
 }

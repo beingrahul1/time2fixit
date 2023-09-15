@@ -32,6 +32,11 @@ public class TrackingServiceImpl implements TrackingService {
 		System.out.println(bookingId);
 		return trackingRepository.findByBookingId(bookingId);
 	}
+	
+	@Override
+	public Tracking getTrack(String userEmail) {
+		return trackingRepository.findByuserEmail(userEmail);
+	}
 
 
 	@Override

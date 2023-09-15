@@ -19,4 +19,6 @@ public interface TrackingService {
 
 	Tracking getTracker(int bookingId);
 
+	Tracking getTrack(String userEmail);
+
 }

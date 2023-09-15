@@ -48,6 +48,12 @@ public class TrackingController {
 	return trackingService.getTracker(bookingId);	
 	}
 	
+	@GetMapping("trackByEmail/{userEmail}")
+	public Tracking getTrackingByUserEmail(@PathVariable String userEmail)
+	{
+	return trackingService.getTrack(userEmail);	
+	}
+	
 	
 	@DeleteMapping("{bookingId}")
 	public String deleteTrackingById(@PathVariable int bookingId)
