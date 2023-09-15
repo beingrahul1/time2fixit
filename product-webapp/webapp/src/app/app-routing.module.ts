@@ -7,7 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { FeedbackDataComponent } from './feedback-data/feedback-data.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { UpdateuserComponent } from './updateuser/updateuser.component';
-
+import { ProviderUpdateComponent } from './provider-update/provider-update.component';
 import { ServiceProviderRegistrationComponent } from './service-provider-registration/service-provider-registration.component';
 import { UserRegistrationComponent } from './user-registration/user-registration.component';
 import { HomeserviceComponent } from './homeservice/homeservice.component';
@@ -21,7 +21,7 @@ const routes: Routes = [
 
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
-
+{ path: 'provider-update', component: ProviderUpdateComponent },
   { path: 'feedback', component: FeedbackComponent },
   { path: 'showfeedback', component: FeedbackDataComponent },
   { path: 'updateuser', component: UpdateuserComponent },
@@ -33,7 +33,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes,{useHash:true})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
