@@ -21,6 +21,7 @@ import { HomeserviceComponent } from './homeservice/homeservice.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { FooterComponent } from './footer/footer.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 =======
 import { UserTrackerComponent } from './user-tracker/user-tracker.component';
 >>>>>>> 8ef51d0 (Tracking)
@@ -43,7 +44,8 @@ ProviderUpdateComponent,
     HomeserviceComponent,
     NavbarComponent,
     AboutusComponent,
-    FooterComponent
+    FooterComponent,
+    ForgotPasswordComponent
 =======
     UserTrackerComponent
 >>>>>>> 8ef51d0 (Tracking)
