@@ -43,9 +43,14 @@ public class TrackingServiceImpl implements TrackingService {
 
 
 	@Override
-	public Tracking update(Tracking tracking) {
-
-		return trackingRepository.save(tracking);
+	public Tracking update(int bookingId,Tracking tracking) {
+		 if (trackingRepository.existsById(bookingId)) {
+	            tracking.setBookingId(bookingId);
+	            
+	            return trackingRepository.save(tracking);
+	        }
+	        return null;
+		
 	}
 
 

@@ -3,6 +3,7 @@ package com.stackroute.TrackingService.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.stackroute.TrackingService.model.Tracking;
 import com.stackroute.TrackingService.service.TrackingService;
-
+@CrossOrigin
 @RestController
 @RequestMapping("track")
 
@@ -29,10 +30,10 @@ public class TrackingController {
 	}
 	
 	
-	@PutMapping
-	public Tracking updateTracking(@RequestBody Tracking tracking)
+	@PutMapping("{bookingId}")
+	public Tracking updateTracking(@PathVariable int bookingId,@RequestBody Tracking tracking)
 	{
-	return trackingService.update(tracking);	
+	return trackingService.update(bookingId,tracking);	
 	}
 	
 	@GetMapping

@@ -11,7 +11,7 @@ public interface TrackingService {
 
 	Tracking save(Tracking tracking);
 
-	Tracking update(Tracking tracking);
+	Tracking update(int bookingId, Tracking tracking);
 
 	List<Tracking> getTracking();
 
