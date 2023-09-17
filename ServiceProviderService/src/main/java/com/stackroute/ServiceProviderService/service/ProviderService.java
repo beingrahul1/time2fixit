@@ -53,7 +53,7 @@ public class ProviderService {
         provider1.setContactnumber(provider.getContactnumber());
         provider1.setServiceProduct(provider.getServiceProduct());
         provider1.setProductBrand(provider.getProductBrand());
-        
+        provider1.setProfilePic(provider.getProfilePic());
         return providerRepo.save(provider1);
     }
 
