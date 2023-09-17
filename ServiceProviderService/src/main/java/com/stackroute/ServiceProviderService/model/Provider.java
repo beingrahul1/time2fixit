@@ -27,7 +27,7 @@ public class Provider {
     private String password;
     private String address;
     private  String contactnumber;
-    private String image;
+    private String profilePic;
     private List<String> serviceProduct;
     private List<String> productBrand;
 }
