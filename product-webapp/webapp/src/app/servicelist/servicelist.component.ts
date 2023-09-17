@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { serviceprovider } from '../service-provider-registration/serviceProvider.model';
+import { provider } from '../provider-update/provider.model';
 import { ServiceproviderService } from '../serviceprovider.service';
 
 @Component({
@@ -11,7 +11,7 @@ export class ServicelistComponent implements OnInit{
 
   constructor(private serviceprovider:ServiceproviderService){}
   ngOnInit(): void {
-    this.getServiceProviderList();
+  this.getServiceProviderList();
   }
 
   searchtxt : string ='';
@@ -23,15 +23,43 @@ export class ServicelistComponent implements OnInit{
   productBrand : boolean = false;
   serviceProduct : boolean = false;
 
-  listofproviders : serviceprovider [] =[];
+  listofproviders : provider [] =[];
+
 
   onSubmit()
   {
+    console.log(this.location);
+    console.log(this.email);
+    console.log(this.shopName);
+    console.log(this.shopOwnerName);
+    console.log(this.productBrand);
+    console.log(this.serviceProduct);
+
     if(this.location == false && this.email && this.phoneNumber == false && this.shopName == false && this.shopOwnerName ==false && this.productBrand == false && this.serviceProduct == false)
     {
-      this.serviceprovider.getByEmail().subscribe(
+      this.serviceprovider.getByEmail(this.searchtxt).subscribe(
         data=>{
-          this.listofproviders = data;
+          console.log(data);
+          
+          const parsedObject = JSON.parse(data)
+
+          for (const item of parsedObject) {
+            const providerInstance = new provider();
+            providerInstance.email = item.email;
+            providerInstance.shopname = item.shopname;
+            providerInstance.password = item.password;
+            providerInstance.contactnumber = item.contactnumber;
+            providerInstance.serviceProduct = item.serviceProduct;
+            providerInstance.productBrand = item.productBrand;
+            providerInstance.shopownername = item.shopownername;
+            providerInstance.address = item.address;
+            providerInstance.profilePic = item.profilePic;
+          
+            
+            this.listofproviders.push(providerInstance);
+          }
+          
+
         },
         error=>{
           console.log(error);
@@ -41,9 +69,26 @@ export class ServicelistComponent implements OnInit{
 
     if(this.location == false && this.email == false && this.phoneNumber == false && this.shopName && this.shopOwnerName && this.productBrand == false && this.serviceProduct == false)
     {
-      this.serviceprovider.getByshopNameandShopOwnerName().subscribe(
+      this.serviceprovider.getByshopNameandShopOwnerName(this.searchtxt).subscribe(
         data=>{
-          this.listofproviders = data;
+          console.log(data);
+          
+          const parsedObject = JSON.parse(data);
+          for (const item of parsedObject) {
+            const providerInstance = new provider();
+            providerInstance.email = item.email;
+            providerInstance.shopname = item.shopname;
+            providerInstance.password = item.password;
+            providerInstance.contactnumber = item.contactnumber;
+            providerInstance.serviceProduct = item.serviceProduct;
+            providerInstance.productBrand = item.productBrand;
+            providerInstance.shopownername = item.shopownername;
+            providerInstance.address = item.address;
+            providerInstance.profilePic = item.profilePic;         
+            
+            this.listofproviders.push(providerInstance);
+          }
+
         },
         error=>{
           console.log(error);
@@ -53,9 +98,24 @@ export class ServicelistComponent implements OnInit{
 
     if(this.location == false && this.email == false && this.phoneNumber == false && this.shopName && this.shopOwnerName ==false && this.productBrand == false && this.serviceProduct)
     {
-      this.serviceprovider.getByShopNameandServiceProduct().subscribe(
+      this.serviceprovider.getByShopNameandServiceProduct(this.searchtxt).subscribe(
         data=>{
-          this.listofproviders = data;
+          const parsedObject = JSON.parse(data);
+          for (const item of parsedObject) {
+            const providerInstance = new provider();
+            providerInstance.email = item.email;
+            providerInstance.shopname = item.shopname;
+            providerInstance.password = item.password;
+            providerInstance.contactnumber = item.contactnumber;
+            providerInstance.serviceProduct = item.serviceProduct;
+            providerInstance.productBrand = item.productBrand;
+            providerInstance.shopownername = item.shopownername;
+            providerInstance.address = item.address;
+            providerInstance.profilePic = item.profilePic;         
+            
+            this.listofproviders.push(providerInstance);
+          }
+
         },
         error=>{
           console.log(error);
@@ -63,11 +123,52 @@ export class ServicelistComponent implements OnInit{
       )
     }
 
+    if(this.location && this.email==false && this.phoneNumber == false && this.shopName == false && this.shopOwnerName && this.productBrand == false && this.serviceProduct == false)
+    {
+      this.serviceprovider.getByShopownernameandAddress(this.searchtxt).subscribe(
+        data=>{
+          const parsedObject = JSON.parse(data);
+          for (const item of parsedObject) {
+            const providerInstance = new provider();
+            providerInstance.email = item.email;
+            providerInstance.shopname = item.shopname;
+            providerInstance.password = item.password;
+            providerInstance.contactnumber = item.contactnumber;
+            providerInstance.serviceProduct = item.serviceProduct;
+            providerInstance.productBrand = item.productBrand;
+            providerInstance.shopownername = item.shopownername;
+            providerInstance.address = item.address;
+            providerInstance.profilePic = item.profilePic;         
+            
+            this.listofproviders.push(providerInstance);
+          }
+        },
+        error=>{
+          console.log(error);
+        }
+      )
+    }
+
+
     if(this.location == false && this.email == false && this.phoneNumber == false && this.shopName && this.shopOwnerName ==false && this.productBrand && this.serviceProduct == false)
     {
-      this.serviceprovider.getByShopNameandProductBrand().subscribe(
+      this.serviceprovider.getByShopNameandProductBrand(this.searchtxt).subscribe(
         data=>{
-          this.listofproviders = data;
+          const parsedObject = JSON.parse(data);
+          for (const item of parsedObject) {
+            const providerInstance = new provider();
+            providerInstance.email = item.email;
+            providerInstance.shopname = item.shopname;
+            providerInstance.password = item.password;
+            providerInstance.contactnumber = item.contactnumber;
+            providerInstance.serviceProduct = item.serviceProduct;
+            providerInstance.productBrand = item.productBrand;
+            providerInstance.shopownername = item.shopownername;
+            providerInstance.address = item.address;
+            providerInstance.profilePic = item.profilePic;         
+            
+            this.listofproviders.push(providerInstance);
+          }
         },
         error=>{
           console.log(error);
@@ -77,9 +178,23 @@ export class ServicelistComponent implements OnInit{
 
     if(this.location && this.email == false && this.phoneNumber == false && this.shopName && this.shopOwnerName ==false && this.productBrand == false && this.serviceProduct == false)
     {
-      this.serviceprovider.getByShopNameandAddress().subscribe(
+      this.serviceprovider.getByShopNameandAddress(this.searchtxt).subscribe(
         data=>{
-          this.listofproviders = data;
+          const parsedObject = JSON.parse(data);
+          for (const item of parsedObject) {
+            const providerInstance = new provider();
+            providerInstance.email = item.email;
+            providerInstance.shopname = item.shopname;
+            providerInstance.password = item.password;
+            providerInstance.contactnumber = item.contactnumber;
+            providerInstance.serviceProduct = item.serviceProduct;
+            providerInstance.productBrand = item.productBrand;
+            providerInstance.shopownername = item.shopownername;
+            providerInstance.address = item.address;
+            providerInstance.profilePic = item.profilePic;         
+            
+            this.listofproviders.push(providerInstance);
+          }
         },
         error=>{
           console.log(error);
@@ -87,209 +202,878 @@ export class ServicelistComponent implements OnInit{
       )
     }
 
-    if(this.location == false && this.email == false && this.phoneNumber && this.shopName && this.shopOwnerName ==false && this.productBrand == false && this.serviceProduct == false)
-    {
-      this.serviceprovider.getByShopNameandContactNumber().subscribe(
-        data=>{
-          this.listofproviders = data;
-        },
-        error=>{
-          console.log(error);
+   if(this.location == false && this.email == false && this.phoneNumber && this.shopName && this.shopOwnerName ==false && this.productBrand == false && this.serviceProduct == false)
+   {
+     this.serviceprovider.getByShopNameandContactNumber(this.searchtxt).subscribe(
+       data=>{
+        const parsedObject = JSON.parse(data);
+        for (const item of parsedObject) {
+          const providerInstance = new provider();
+          providerInstance.email = item.email;
+          providerInstance.shopname = item.shopname;
+          providerInstance.password = item.password;
+          providerInstance.contactnumber = item.contactnumber;
+          providerInstance.serviceProduct = item.serviceProduct;
+          providerInstance.productBrand = item.productBrand;
+          providerInstance.shopownername = item.shopownername;
+          providerInstance.address = item.address;
+          providerInstance.profilePic = item.profilePic;         
+          
+          this.listofproviders.push(providerInstance);
         }
-      )
-    }
+       },
+       error=>{
+         console.log(error);
+       }
+     )
+   }
 
-    if(this.location == false && this.email && this.phoneNumber == false && this.shopName && this.shopOwnerName ==false && this.productBrand == false && this.serviceProduct == false)
-    {
-      this.serviceprovider.getByShopNameandEmail().subscribe(
-        data=>{
-          this.listofproviders = data;
-        },
-        error=>{
-          console.log(error);
+   if(this.location == false && this.email && this.phoneNumber == false && this.shopName && this.shopOwnerName ==false && this.productBrand == false && this.serviceProduct == false)
+   {
+     this.serviceprovider.getByShopNameandEmail(this.searchtxt).subscribe(
+       data=>{
+        const parsedObject = JSON.parse(data);
+        for (const item of parsedObject) {
+          const providerInstance = new provider();
+          providerInstance.email = item.email;
+          providerInstance.shopname = item.shopname;
+          providerInstance.password = item.password;
+          providerInstance.contactnumber = item.contactnumber;
+          providerInstance.serviceProduct = item.serviceProduct;
+          providerInstance.productBrand = item.productBrand;
+          providerInstance.shopownername = item.shopownername;
+          providerInstance.address = item.address;
+          providerInstance.profilePic = item.profilePic;         
+          
+          this.listofproviders.push(providerInstance);
         }
-      )
-    }
+       },
+       error=>{
+         console.log(error);
+       }
+     )
+   }
 
-    if(this.location == false && this.email == false && this.phoneNumber == false && this.shopName == false && this.shopOwnerName && this.productBrand == false && this.serviceProduct)
-    {
-      this.serviceprovider.getByShopOwnerNameandServiceProduct().subscribe(
-        data=>{
-          this.listofproviders = data;
-        },
-        error=>{
-          console.log(error);
+   if(this.location == false && this.email == false && this.phoneNumber == false && this.shopName == false && this.shopOwnerName && this.productBrand == false && this.serviceProduct)
+   {
+     this.serviceprovider.getByShopOwnerNameandServiceProduct(this.searchtxt).subscribe(
+       data=>{
+        const parsedObject = JSON.parse(data);
+        for (const item of parsedObject) {
+          const providerInstance = new provider();
+          providerInstance.email = item.email;
+          providerInstance.shopname = item.shopname;
+          providerInstance.password = item.password;
+          providerInstance.contactnumber = item.contactnumber;
+          providerInstance.serviceProduct = item.serviceProduct;
+          providerInstance.productBrand = item.productBrand;
+          providerInstance.shopownername = item.shopownername;
+          providerInstance.address = item.address;
+          providerInstance.profilePic = item.profilePic;         
+          
+          this.listofproviders.push(providerInstance);
         }
-      )
-    }
+       },
+       error=>{
+         console.log(error);
+       }
+     )
+   }
 
-    if(this.location == false && this.email == false && this.phoneNumber == false && this.shopName == false && this.shopOwnerName && this.productBrand && this.serviceProduct == false)
-    {
-      this.serviceprovider.getByShopOwnerNameandProductBrand().subscribe(
-        data=>{
-          this.listofproviders = data;
-        },
-        error=>{
-          console.log(error);
+   if(this.location == false && this.email == false && this.phoneNumber == false && this.shopName == false && this.shopOwnerName && this.productBrand && this.serviceProduct == false)
+   {
+     this.serviceprovider.getByShopOwnerNameandProductBrand(this.searchtxt).subscribe(
+       data=>{
+        const parsedObject = JSON.parse(data);
+        for (const item of parsedObject) {
+          const providerInstance = new provider();
+          providerInstance.email = item.email;
+          providerInstance.shopname = item.shopname;
+          providerInstance.password = item.password;
+          providerInstance.contactnumber = item.contactnumber;
+          providerInstance.serviceProduct = item.serviceProduct;
+          providerInstance.productBrand = item.productBrand;
+          providerInstance.shopownername = item.shopownername;
+          providerInstance.address = item.address;
+          providerInstance.profilePic = item.profilePic;         
+          
+          this.listofproviders.push(providerInstance);
         }
-      )
-    }
-    if(this.location == false && this.email == false && this.phoneNumber && this.shopName == false && this.shopOwnerName && this.productBrand == false && this.serviceProduct == false)
-    {
-      this.serviceprovider.getByShopOwnerNameandcontactNumber().subscribe(
-        data=>{
-          this.listofproviders = data;
-        },
-        error=>{
-          console.log(error);
+       },
+       error=>{
+         console.log(error);
+       }
+     )
+   }
+   if(this.location == false && this.email == false && this.phoneNumber && this.shopName == false && this.shopOwnerName && this.productBrand == false && this.serviceProduct == false)
+   {
+     this.serviceprovider.getByShopOwnerNameandcontactNumber(this.searchtxt).subscribe(
+       data=>{
+        const parsedObject = JSON.parse(data);
+        for (const item of parsedObject) {
+          const providerInstance = new provider();
+          providerInstance.email = item.email;
+          providerInstance.shopname = item.shopname;
+          providerInstance.password = item.password;
+          providerInstance.contactnumber = item.contactnumber;
+          providerInstance.serviceProduct = item.serviceProduct;
+          providerInstance.productBrand = item.productBrand;
+          providerInstance.shopownername = item.shopownername;
+          providerInstance.address = item.address;
+          providerInstance.profilePic = item.profilePic;         
+          
+          this.listofproviders.push(providerInstance);
         }
-      )
-    }
+       },
+       error=>{
+         console.log(error);
+       }
+     )
+   }
 
-    if(this.location == false && this.email && this.phoneNumber == false && this.shopName == false && this.shopOwnerName && this.productBrand == false && this.serviceProduct == false)
-    {
-      this.serviceprovider.getByShopOwnerNameandEmail().subscribe(
-        data=>{
-          this.listofproviders = data;
-        },
-        error=>{
-          console.log(error);
+   if(this.location == false && this.email && this.phoneNumber == false && this.shopName == false && this.shopOwnerName && this.productBrand == false && this.serviceProduct == false)
+   {
+     this.serviceprovider.getByShopOwnerNameandEmail(this.searchtxt).subscribe(
+       data=>{
+        const parsedObject = JSON.parse(data);
+        for (const item of parsedObject) {
+          const providerInstance = new provider();
+          providerInstance.email = item.email;
+          providerInstance.shopname = item.shopname;
+          providerInstance.password = item.password;
+          providerInstance.contactnumber = item.contactnumber;
+          providerInstance.serviceProduct = item.serviceProduct;
+          providerInstance.productBrand = item.productBrand;
+          providerInstance.shopownername = item.shopownername;
+          providerInstance.address = item.address;
+          providerInstance.profilePic = item.profilePic;         
+          
+          this.listofproviders.push(providerInstance);
         }
-      )
-    }
+       },
+       error=>{
+         console.log(error);
+       }
+     )
+   }
 
-    if(this.location && this.email == false && this.phoneNumber == false && this.shopName == false && this.shopOwnerName ==false && this.productBrand == false && this.serviceProduct)
-    {
-      this.serviceprovider.getByServiceProductandAddress().subscribe(
-        data=>{
-          this.listofproviders = data;
-        },
-        error=>{
-          console.log(error);
+   if(this.location && this.email == false && this.phoneNumber == false && this.shopName == false && this.shopOwnerName ==false && this.productBrand == false && this.serviceProduct)
+   {
+     this.serviceprovider.getByServiceProductandAddress(this.searchtxt).subscribe(
+       data=>{
+        const parsedObject = JSON.parse(data);
+        for (const item of parsedObject) {
+          const providerInstance = new provider();
+          providerInstance.email = item.email;
+          providerInstance.shopname = item.shopname;
+          providerInstance.password = item.password;
+          providerInstance.contactnumber = item.contactnumber;
+          providerInstance.serviceProduct = item.serviceProduct;
+          providerInstance.productBrand = item.productBrand;
+          providerInstance.shopownername = item.shopownername;
+          providerInstance.address = item.address;
+          providerInstance.profilePic = item.profilePic;         
+          
+          this.listofproviders.push(providerInstance);
         }
-      )
-    }
+       },
+       error=>{
+         console.log(error);
+       }
+     )
+   }
 
-    if(this.location && this.email == false && this.phoneNumber == false && this.shopName == false && this.shopOwnerName ==false && this.productBrand && this.serviceProduct == false)
-    {
-      this.serviceprovider.getByProductBrandandAddress().subscribe(
-        data=>{
-          this.listofproviders = data;
-        },
-        error=>{
-          console.log(error);
+   if(this.location && this.email == false && this.phoneNumber == false && this.shopName == false && this.shopOwnerName ==false && this.productBrand && this.serviceProduct == false)
+   {
+     this.serviceprovider.getByProductBrandandAddress(this.searchtxt).subscribe(
+       data=>{
+        const parsedObject = JSON.parse(data);
+        for (const item of parsedObject) {
+          const providerInstance = new provider();
+          providerInstance.email = item.email;
+          providerInstance.shopname = item.shopname;
+          providerInstance.password = item.password;
+          providerInstance.contactnumber = item.contactnumber;
+          providerInstance.serviceProduct = item.serviceProduct;
+          providerInstance.productBrand = item.productBrand;
+          providerInstance.shopownername = item.shopownername;
+          providerInstance.address = item.address;
+          providerInstance.profilePic = item.profilePic;         
+          
+          this.listofproviders.push(providerInstance);
         }
-      )
-    }
+       },
+       error=>{
+         console.log(error);
+       }
+     )
+   }
 
-    if(this.location == false && this.email == false && this.phoneNumber && this.shopName == false && this.shopOwnerName ==false && this.productBrand == false && this.serviceProduct)
-    {
-      this.serviceprovider.getByServiceProductandcontactNumber().subscribe(
-        data=>{
-          this.listofproviders = data;
-        },
-        error=>{
-          console.log(error);
+   if(this.location == false && this.email == false && this.phoneNumber && this.shopName == false && this.shopOwnerName ==false && this.productBrand == false && this.serviceProduct)
+   {
+     this.serviceprovider.getByServiceProductandcontactNumber(this.searchtxt).subscribe(
+       data=>{
+        const parsedObject = JSON.parse(data);
+        for (const item of parsedObject) {
+          const providerInstance = new provider();
+          providerInstance.email = item.email;
+          providerInstance.shopname = item.shopname;
+          providerInstance.password = item.password;
+          providerInstance.contactnumber = item.contactnumber;
+          providerInstance.serviceProduct = item.serviceProduct;
+          providerInstance.productBrand = item.productBrand;
+          providerInstance.shopownername = item.shopownername;
+          providerInstance.address = item.address;
+          providerInstance.profilePic = item.profilePic;         
+          
+          this.listofproviders.push(providerInstance);
         }
-      )
-    }
-    if(this.location == false && this.email == false && this.phoneNumber && this.shopName == false && this.shopOwnerName ==false && this.productBrand && this.serviceProduct == false)
-    {
-      this.serviceprovider.getByProductBrandandcontactNumber().subscribe(
-        data=>{
-          this.listofproviders = data;
-        },
-        error=>{
-          console.log(error);
+       },
+       error=>{
+         console.log(error);
+       }
+     )
+   }
+   if(this.location == false && this.email == false && this.phoneNumber && this.shopName == false && this.shopOwnerName ==false && this.productBrand && this.serviceProduct == false)
+   {
+     this.serviceprovider.getByProductBrandandcontactNumber(this.searchtxt).subscribe(
+       data=>{
+        const parsedObject = JSON.parse(data);
+        for (const item of parsedObject) {
+          const providerInstance = new provider();
+          providerInstance.email = item.email;
+          providerInstance.shopname = item.shopname;
+          providerInstance.password = item.password;
+          providerInstance.contactnumber = item.contactnumber;
+          providerInstance.serviceProduct = item.serviceProduct;
+          providerInstance.productBrand = item.productBrand;
+          providerInstance.shopownername = item.shopownername;
+          providerInstance.address = item.address;
+          providerInstance.profilePic = item.profilePic;         
+          
+          this.listofproviders.push(providerInstance);
         }
-      )
-    }
-    if(this.location == false && this.email && this.phoneNumber == false && this.shopName == false && this.shopOwnerName ==false && this.productBrand == false && this.serviceProduct)
-    {
-      this.serviceprovider.getByServiceProductandEmail().subscribe(
-        data=>{
-          this.listofproviders = data;
-        },
-        error=>{
-          console.log(error);
+       },
+       error=>{
+         console.log(error);
+       }
+     )
+   }
+   if(this.location == false && this.email && this.phoneNumber == false && this.shopName == false && this.shopOwnerName ==false && this.productBrand == false && this.serviceProduct)
+   {
+     this.serviceprovider.getByServiceProductandEmail(this.searchtxt).subscribe(
+       data=>{
+        const parsedObject = JSON.parse(data);
+        for (const item of parsedObject) {
+          const providerInstance = new provider();
+          providerInstance.email = item.email;
+          providerInstance.shopname = item.shopname;
+          providerInstance.password = item.password;
+          providerInstance.contactnumber = item.contactnumber;
+          providerInstance.serviceProduct = item.serviceProduct;
+          providerInstance.productBrand = item.productBrand;
+          providerInstance.shopownername = item.shopownername;
+          providerInstance.address = item.address;
+          providerInstance.profilePic = item.profilePic;         
+          
+          this.listofproviders.push(providerInstance);
         }
-      )
-    }
+       },
+       error=>{
+         console.log(error);
+       }
+     )
+   }
 
-    if(this.location == false && this.email && this.phoneNumber == false && this.shopName == false && this.shopOwnerName ==false && this.productBrand && this.serviceProduct == false)
-    {
-      this.serviceprovider.getByProductBrandandEmail().subscribe(
-        data=>{
-          this.listofproviders = data;
-        },
-        error=>{
-          console.log(error);
+   if(this.location == false && this.email && this.phoneNumber == false && this.shopName == false && this.shopOwnerName ==false && this.productBrand && this.serviceProduct == false)
+   {
+     this.serviceprovider.getByProductBrandandEmail(this.searchtxt).subscribe(
+       data=>{
+        const parsedObject = JSON.parse(data);
+        for (const item of parsedObject) {
+          const providerInstance = new provider();
+          providerInstance.email = item.email;
+          providerInstance.shopname = item.shopname;
+          providerInstance.password = item.password;
+          providerInstance.contactnumber = item.contactnumber;
+          providerInstance.serviceProduct = item.serviceProduct;
+          providerInstance.productBrand = item.productBrand;
+          providerInstance.shopownername = item.shopownername;
+          providerInstance.address = item.address;
+          providerInstance.profilePic = item.profilePic;         
+          
+          this.listofproviders.push(providerInstance);
         }
-      )
-    }
+       },
+       error=>{
+         console.log(error);
+       }
+     )
+   }
 
-    if(this.location == false && this.email == false && this.phoneNumber == false && this.shopName == false && this.shopOwnerName == false && this.productBrand && this.serviceProduct)
-    {
-      this.serviceprovider.getByServiceProductandProductBrand().subscribe(
-        data=>{
-          this.listofproviders = data;
-        },
-        error=>{
-          console.log(error);
+   if(this.location == false && this.email == false && this.phoneNumber == false && this.shopName == false && this.shopOwnerName == false && this.productBrand && this.serviceProduct)
+   {
+     this.serviceprovider.getByServiceProductandProductBrand(this.searchtxt).subscribe(
+       data=>{
+        const parsedObject = JSON.parse(data);
+        for (const item of parsedObject) {
+          const providerInstance = new provider();
+          providerInstance.email = item.email;
+          providerInstance.shopname = item.shopname;
+          providerInstance.password = item.password;
+          providerInstance.contactnumber = item.contactnumber;
+          providerInstance.serviceProduct = item.serviceProduct;
+          providerInstance.productBrand = item.productBrand;
+          providerInstance.shopownername = item.shopownername;
+          providerInstance.address = item.address;
+          providerInstance.profilePic = item.profilePic;         
+          
+          this.listofproviders.push(providerInstance);
         }
-      )
-    }
+       },
+       error=>{
+         console.log(error);
+       }
+     )
+   }
 
-    if(this.location && this.email == false && this.phoneNumber && this.shopName == false && this.shopOwnerName ==false && this.productBrand == false && this.serviceProduct == false)
-    {
-      this.serviceprovider.getByAddressandContactNumber().subscribe(
-        data=>{
-          this.listofproviders = data;
-        },
-        error=>{
-          console.log(error);
+   if(this.location && this.email == false && this.phoneNumber && this.shopName == false && this.shopOwnerName ==false && this.productBrand == false && this.serviceProduct == false)
+   {
+     this.serviceprovider.getByAddressandContactNumber(this.searchtxt).subscribe(
+       data=>{
+        const parsedObject = JSON.parse(data);
+        for (const item of parsedObject) {
+          const providerInstance = new provider();
+          providerInstance.email = item.email;
+          providerInstance.shopname = item.shopname;
+          providerInstance.password = item.password;
+          providerInstance.contactnumber = item.contactnumber;
+          providerInstance.serviceProduct = item.serviceProduct;
+          providerInstance.productBrand = item.productBrand;
+          providerInstance.shopownername = item.shopownername;
+          providerInstance.address = item.address;
+          providerInstance.profilePic = item.profilePic;         
+          
+          this.listofproviders.push(providerInstance);
         }
-      )
-    }
+       },
+       error=>{
+         console.log(error);
+       }
+     )
+   }
 
-    if(this.location && this.email && this.phoneNumber == false && this.shopName == false && this.shopOwnerName ==false && this.productBrand == false && this.serviceProduct == false)
-    {
-      this.serviceprovider.getByAddressandEmail().subscribe(
-        data=>{
-          this.listofproviders = data;
-        },
-        error=>{
-          console.log(error);
+   if(this.location && this.email && this.phoneNumber == false && this.shopName == false && this.shopOwnerName ==false && this.productBrand == false && this.serviceProduct == false)
+   {
+     this.serviceprovider.getByAddressandEmail(this.searchtxt).subscribe(
+       data=>{
+        const parsedObject = JSON.parse(data);
+        for (const item of parsedObject) {
+          const providerInstance = new provider();
+          providerInstance.email = item.email;
+          providerInstance.shopname = item.shopname;
+          providerInstance.password = item.password;
+          providerInstance.contactnumber = item.contactnumber;
+          providerInstance.serviceProduct = item.serviceProduct;
+          providerInstance.productBrand = item.productBrand;
+          providerInstance.shopownername = item.shopownername;
+          providerInstance.address = item.address;
+          providerInstance.profilePic = item.profilePic;         
+          
+          this.listofproviders.push(providerInstance);
         }
-      )
-    }
+       },
+       error=>{
+         console.log(error);
+       }
+     )
+   }
 
-    if(this.location && this.email && this.phoneNumber && this.shopName && this.shopOwnerName && this.productBrand && this.serviceProduct)
-    {
-      this.serviceprovider.serviceProviderList().subscribe(
-        data=>{
-          this.listofproviders = data;
-        },
-        error=>{
-          console.log(error);
+   if(this.location && this.email && this.phoneNumber && this.shopName && this.shopOwnerName && this.productBrand && this.serviceProduct)
+   {
+     this.serviceprovider.getByAllFields(this.searchtxt).subscribe(
+       data=>{
+        const parsedObject = JSON.parse(data);
+        for (const item of parsedObject) {
+          const providerInstance = new provider();
+          providerInstance.email = item.email;
+          providerInstance.shopname = item.shopname;
+          providerInstance.password = item.password;
+          providerInstance.contactnumber = item.contactnumber;
+          providerInstance.serviceProduct = item.serviceProduct;
+          providerInstance.productBrand = item.productBrand;
+          providerInstance.shopownername = item.shopownername;
+          providerInstance.address = item.address;
+          providerInstance.profilePic = item.profilePic;         
+          
+          this.listofproviders.push(providerInstance);
         }
-      )
-    }
-  }
+       },
+       error=>{
+         console.log(error);
+       }
+     )
+   }
+
+    
+   if(this.location  && this.shopName && this.shopOwnerName && this.productBrand == false && this.serviceProduct == false)
+   {
+     this.serviceprovider.getByShopNameandShopOwnernameAndAddress(this.searchtxt).subscribe(
+       data=>{
+        const parsedObject = JSON.parse(data);
+        for (const item of parsedObject) {
+          const providerInstance = new provider();
+          providerInstance.email = item.email;
+          providerInstance.shopname = item.shopname;
+          providerInstance.password = item.password;
+          providerInstance.contactnumber = item.contactnumber;
+          providerInstance.serviceProduct = item.serviceProduct;
+          providerInstance.productBrand = item.productBrand;
+          providerInstance.shopownername = item.shopownername;
+          providerInstance.address = item.address;
+          providerInstance.profilePic = item.profilePic;         
+          
+          this.listofproviders.push(providerInstance);
+        }
+       },
+       error=>{
+         console.log(error);
+       }
+     )
+   }
+  
+
+
+   if(this.location == false  && this.shopName && this.shopOwnerName && this.productBrand == false && this.serviceProduct)
+   {
+     this.serviceprovider.getByShopNameandShopOwnernameAndServiceProduct(this.searchtxt).subscribe(
+       data=>{
+        const parsedObject = JSON.parse(data);
+        for (const item of parsedObject) {
+          const providerInstance = new provider();
+          providerInstance.email = item.email;
+          providerInstance.shopname = item.shopname;
+          providerInstance.password = item.password;
+          providerInstance.contactnumber = item.contactnumber;
+          providerInstance.serviceProduct = item.serviceProduct;
+          providerInstance.productBrand = item.productBrand;
+          providerInstance.shopownername = item.shopownername;
+          providerInstance.address = item.address;
+          providerInstance.profilePic = item.profilePic;         
+          
+          this.listofproviders.push(providerInstance);
+        }
+       },
+       error=>{
+         console.log(error);
+       }
+     )
+   }
+  
+
+
+
+   if(this.location == false  && this.shopName && this.shopOwnerName && this.productBrand && this.serviceProduct == false )
+   {
+     this.serviceprovider.getByShopNameandShopOwnernameAndProductBrand(this.searchtxt).subscribe(
+       data=>{
+        const parsedObject = JSON.parse(data);
+        for (const item of parsedObject) {
+          const providerInstance = new provider();
+          providerInstance.email = item.email;
+          providerInstance.shopname = item.shopname;
+          providerInstance.password = item.password;
+          providerInstance.contactnumber = item.contactnumber;
+          providerInstance.serviceProduct = item.serviceProduct;
+          providerInstance.productBrand = item.productBrand;
+          providerInstance.shopownername = item.shopownername;
+          providerInstance.address = item.address;
+          providerInstance.profilePic = item.profilePic;         
+          
+          this.listofproviders.push(providerInstance);
+        }
+       },
+       error=>{
+         console.log(error);
+       }
+     )
+   }
+
+
+
+
+
+       if(this.location  && this.shopName  && this.shopOwnerName && this.productBrand  == false && this.serviceProduct )
+   {
+     this.serviceprovider.getByShopnameAndShopownernameAndAddressAndServiceProduct(this.searchtxt).subscribe(
+       data=>{
+        const parsedObject = JSON.parse(data);
+        for (const item of parsedObject) {
+          const providerInstance = new provider();
+          providerInstance.email = item.email;
+          providerInstance.shopname = item.shopname;
+          providerInstance.password = item.password;
+          providerInstance.contactnumber = item.contactnumber;
+          providerInstance.serviceProduct = item.serviceProduct;
+          providerInstance.productBrand = item.productBrand;
+          providerInstance.shopownername = item.shopownername;
+          providerInstance.address = item.address;
+          providerInstance.profilePic = item.profilePic;         
+          
+          this.listofproviders.push(providerInstance);
+        }
+       },
+       error=>{
+         console.log(error);
+       }
+     )
+   }
+
+
+   if(this.location  && this.shopName && this.shopOwnerName && this.productBrand && this.serviceProduct == false )
+   {
+     this.serviceprovider.getByShopnameAndShopownernameAndAddressAndProductBrand(this.searchtxt).subscribe(
+       data=>{
+        const parsedObject = JSON.parse(data);
+        for (const item of parsedObject) {
+          const providerInstance = new provider();
+          providerInstance.email = item.email;
+          providerInstance.shopname = item.shopname;
+          providerInstance.password = item.password;
+          providerInstance.contactnumber = item.contactnumber;
+          providerInstance.serviceProduct = item.serviceProduct;
+          providerInstance.productBrand = item.productBrand;
+          providerInstance.shopownername = item.shopownername;
+          providerInstance.address = item.address;
+          providerInstance.profilePic = item.profilePic;         
+          
+          this.listofproviders.push(providerInstance);
+        }
+       },
+       error=>{
+         console.log(error);
+       }
+     )
+   }
+
+
+   if(this.location  == false && this.shopName && this.shopOwnerName && this.productBrand && this.serviceProduct )
+   {
+     this.serviceprovider.getByShopnameAndShopownernameAndServiceProductAndProductBrand(this.searchtxt).subscribe(
+       data=>{
+        const parsedObject = JSON.parse(data);
+        for (const item of parsedObject) {
+          const providerInstance = new provider();
+          providerInstance.email = item.email;
+          providerInstance.shopname = item.shopname;
+          providerInstance.password = item.password;
+          providerInstance.contactnumber = item.contactnumber;
+          providerInstance.serviceProduct = item.serviceProduct;
+          providerInstance.productBrand = item.productBrand;
+          providerInstance.shopownername = item.shopownername;
+          providerInstance.address = item.address;
+          providerInstance.profilePic = item.profilePic;         
+          
+          this.listofproviders.push(providerInstance);
+        }
+       },
+       error=>{
+         console.log(error);
+       }
+     )
+   }
+
+
+   if(this.location && this.shopName && this.shopOwnerName  == false && this.productBrand && this.serviceProduct)
+   {
+     this.serviceprovider.getByShopnameAndAddressAndServiceProductAndProductBrand(this.searchtxt).subscribe(
+       data=>{
+        const parsedObject = JSON.parse(data);
+        for (const item of parsedObject) {
+          const providerInstance = new provider();
+          providerInstance.email = item.email;
+          providerInstance.shopname = item.shopname;
+          providerInstance.password = item.password;
+          providerInstance.contactnumber = item.contactnumber;
+          providerInstance.serviceProduct = item.serviceProduct;
+          providerInstance.productBrand = item.productBrand;
+          providerInstance.shopownername = item.shopownername;
+          providerInstance.address = item.address;
+          providerInstance.profilePic = item.profilePic;         
+          
+          this.listofproviders.push(providerInstance);
+        }
+       },
+       error=>{
+         console.log(error);
+       }
+     )
+   }
+
+
+   if(this.location  && this.shopName  == false && this.shopOwnerName && this.productBrand && this.serviceProduct )
+   {
+     this.serviceprovider.getByShopownernameAndAddressAndServiceProductAndProductBrand(this.searchtxt).subscribe(
+       data=>{
+        const parsedObject = JSON.parse(data);
+        for (const item of parsedObject) {
+          const providerInstance = new provider();
+          providerInstance.email = item.email;
+          providerInstance.shopname = item.shopname;
+          providerInstance.password = item.password;
+          providerInstance.contactnumber = item.contactnumber;
+          providerInstance.serviceProduct = item.serviceProduct;
+          providerInstance.productBrand = item.productBrand;
+          providerInstance.shopownername = item.shopownername;
+          providerInstance.address = item.address;
+          providerInstance.profilePic = item.profilePic;         
+          
+          this.listofproviders.push(providerInstance);
+        }
+       },
+       error=>{
+         console.log(error);
+       }
+     )
+   }
+  
+
+
+
+
+   if(this.location  && this.shopName && this.shopOwnerName  == false && this.productBrand  == false && this.serviceProduct)
+   {
+     this.serviceprovider.getByShopNameandAddressAndServiceProduct(this.searchtxt).subscribe(
+       data=>{
+        const parsedObject = JSON.parse(data);
+        for (const item of parsedObject) {
+          const providerInstance = new provider();
+          providerInstance.email = item.email;
+          providerInstance.shopname = item.shopname;
+          providerInstance.password = item.password;
+          providerInstance.contactnumber = item.contactnumber;
+          providerInstance.serviceProduct = item.serviceProduct;
+          providerInstance.productBrand = item.productBrand;
+          providerInstance.shopownername = item.shopownername;
+          providerInstance.address = item.address;
+          providerInstance.profilePic = item.profilePic;         
+          
+          this.listofproviders.push(providerInstance);
+        }
+       },
+       error=>{
+         console.log(error);
+       }
+     )
+   }
+  
+
+
+
+
+   if(this.location  && this.shopName && this.shopOwnerName  == false && this.productBrand && this.serviceProduct == false )
+   {
+     this.serviceprovider.getByShopNameandAddressAndProductBrand(this.searchtxt).subscribe(
+       data=>{
+        const parsedObject = JSON.parse(data);
+        for (const item of parsedObject) {
+          const providerInstance = new provider();
+          providerInstance.email = item.email;
+          providerInstance.shopname = item.shopname;
+          providerInstance.password = item.password;
+          providerInstance.contactnumber = item.contactnumber;
+          providerInstance.serviceProduct = item.serviceProduct;
+          providerInstance.productBrand = item.productBrand;
+          providerInstance.shopownername = item.shopownername;
+          providerInstance.address = item.address;
+          providerInstance.profilePic = item.profilePic;         
+          
+          this.listofproviders.push(providerInstance);
+        }
+       },
+       error=>{
+         console.log(error);
+       }
+     )
+   }
+  
+
+
+
+
+
+   if(this.location  == false  && this.shopName && this.shopOwnerName == false  && this.productBrand && this.serviceProduct)
+   {
+     this.serviceprovider.getByShopNameandServiceProductAndProductBrand(this.searchtxt).subscribe(
+       data=>{
+        const parsedObject = JSON.parse(data);
+        for (const item of parsedObject) {
+          const providerInstance = new provider();
+          providerInstance.email = item.email;
+          providerInstance.shopname = item.shopname;
+          providerInstance.password = item.password;
+          providerInstance.contactnumber = item.contactnumber;
+          providerInstance.serviceProduct = item.serviceProduct;
+          providerInstance.productBrand = item.productBrand;
+          providerInstance.shopownername = item.shopownername;
+          providerInstance.address = item.address;
+          providerInstance.profilePic = item.profilePic;         
+          
+          this.listofproviders.push(providerInstance);
+        }
+       },
+       error=>{
+         console.log(error);
+       }
+     )
+   }
+  
+
+
+
+
+   if(this.location  && this.shopName  == false && this.shopOwnerName && this.productBrand  == false && this.serviceProduct)
+   {
+     this.serviceprovider.getByShopOwnernameAndAddressAndServiceProduct(this.searchtxt).subscribe(
+       data=>{
+        const parsedObject = JSON.parse(data);
+        for (const item of parsedObject) {
+          const providerInstance = new provider();
+          providerInstance.email = item.email;
+          providerInstance.shopname = item.shopname;
+          providerInstance.password = item.password;
+          providerInstance.contactnumber = item.contactnumber;
+          providerInstance.serviceProduct = item.serviceProduct;
+          providerInstance.productBrand = item.productBrand;
+          providerInstance.shopownername = item.shopownername;
+          providerInstance.address = item.address;
+          providerInstance.profilePic = item.profilePic;         
+          
+          this.listofproviders.push(providerInstance);
+        }
+       },
+       error=>{
+         console.log(error);
+       }
+     )
+   }
+  
+
+
+
+   if(this.location  && this.shopName  == false && this.shopOwnerName && this.productBrand && this.serviceProduct == false )
+   {
+     this.serviceprovider.getByShopOwnernameAndAddressAndProductBrand(this.searchtxt).subscribe(
+       data=>{
+        const parsedObject = JSON.parse(data);
+        for (const item of parsedObject) {
+          const providerInstance = new provider();
+          providerInstance.email = item.email;
+          providerInstance.shopname = item.shopname;
+          providerInstance.password = item.password;
+          providerInstance.contactnumber = item.contactnumber;
+          providerInstance.serviceProduct = item.serviceProduct;
+          providerInstance.productBrand = item.productBrand;
+          providerInstance.shopownername = item.shopownername;
+          providerInstance.address = item.address;
+          providerInstance.profilePic = item.profilePic;         
+          
+          this.listofproviders.push(providerInstance);
+        }
+       },
+       error=>{
+         console.log(error);
+       }
+     )
+   }
+  
+
+
+
+   if(this.location   == false && this.shopName  == false && this.shopOwnerName && this.productBrand && this.serviceProduct)
+   {
+     this.serviceprovider.getByShopOwnernameAndServiceProductAndProductBrand(this.searchtxt).subscribe(
+       data=>{
+        const parsedObject = JSON.parse(data);
+        for (const item of parsedObject) {
+          const providerInstance = new provider();
+          providerInstance.email = item.email;
+          providerInstance.shopname = item.shopname;
+          providerInstance.password = item.password;
+          providerInstance.contactnumber = item.contactnumber;
+          providerInstance.serviceProduct = item.serviceProduct;
+          providerInstance.productBrand = item.productBrand;
+          providerInstance.shopownername = item.shopownername;
+          providerInstance.address = item.address;
+          providerInstance.profilePic = item.profilePic;         
+          
+          this.listofproviders.push(providerInstance);
+        }
+       },
+       error=>{
+         console.log(error);
+       }
+     )
+   }
+  
+
+
+
+   if(this.location  && this.shopName  == false && this.shopOwnerName  == false && this.productBrand && this.serviceProduct)
+   {
+     this.serviceprovider.getByAddressAndServiceProductAndProductBrand(this.searchtxt).subscribe(
+       data=>{
+        const parsedObject = JSON.parse(data);
+        for (const item of parsedObject) {
+          const providerInstance = new provider();
+          providerInstance.email = item.email;
+          providerInstance.shopname = item.shopname;
+          providerInstance.password = item.password;
+          providerInstance.contactnumber = item.contactnumber;
+          providerInstance.serviceProduct = item.serviceProduct;
+          providerInstance.productBrand = item.productBrand;
+          providerInstance.shopownername = item.shopownername;
+          providerInstance.address = item.address;
+          providerInstance.profilePic = item.profilePic;         
+          
+          this.listofproviders.push(providerInstance);
+        }
+       },
+       error=>{
+         console.log(error);
+       }
+     )
+   }
+  
+ }
 
   getServiceProviderList()
   {
-    this.serviceprovider.serviceProviderList().subscribe(
-      data=>{
-        this.listofproviders = data;
-      },
-      error=>{
-        console.log(error);
+   this.serviceprovider.serviceProviderList().subscribe(
+     data=>{
+      const parsedObject = JSON.parse(data);
+      for (const item of parsedObject) {
+        const providerInstance = new provider();
+        providerInstance.email = item.email;
+        providerInstance.shopname = item.shopname;
+        providerInstance.password = item.password;
+        providerInstance.contactnumber = item.contactnumber;
+        providerInstance.serviceProduct = item.serviceProduct;
+        providerInstance.productBrand = item.productBrand;
+        providerInstance.shopownername = item.shopownername;
+        providerInstance.address = item.address;
+        providerInstance.profilePic = item.profilePic;         
+        
+        this.listofproviders.push(providerInstance);
       }
+     },
+     error=>{
+       console.log(error);
+     }
     )
   }
 
 
 
   
-}
+  }
