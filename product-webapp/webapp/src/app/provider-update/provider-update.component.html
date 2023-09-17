@@ -81,15 +81,15 @@
   <form [formGroup]="regForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="ownerName">Shop Owner Name</label>
-      <input type="text" class="form-control" id="ownerName" formControlName="ownerName" required>
+      <input type="text" class="form-control" id="shopownername" formControlName="shopownername" required>
     </div>
     <div class="form-group">
       <label for="shopName">Shop Name</label>
-      <input type="text" class="form-control" id="shopName" formControlName="shopName" required>
+      <input type="text" class="form-control" id="shopname" formControlName="shopname" required>
     </div>
     <div class="form-group">
       <label for="email">Email</label>
-      <input type="text" class="form-control" id="email" formControlName="email" readonly>
+      <input type="text" class="form-control" id="email" formControlName="email" >
     </div>
     <div class="form-group">
       <label for="address">Address</label>
@@ -97,35 +97,35 @@
     </div>
 <div class="form-group">
     <label>Service Products</label>
-    <div>
-      <input type="checkbox" formControlName="selectedServiceProduct" value="Mobile"> Mobile
-      <input type="checkbox" formControlName="sselectedServiceProduct" value="Tablet"> Tablet
-      <input type="checkbox" formControlName="selectedServiceProduct" value="Laptop"> Laptop
-      <input type="checkbox" formControlName="selectedServiceProduct" value="PC"> PC
+    <div class="serviceProduct-checkboxes" *ngFor="let sp of serviceProducts">
+      <label>
+        <input type="checkbox" (change)="toggleserviceProduct(sp)" [checked]="selectedserviceProducts.includes(sp)" />
+        {{ sp }}
+      </label>
     </div>
     </div>
     <div class="form-group">
     <label>Product Brands</label>
-    <div>
-      <input type="checkbox" formControlName="selectedProductBrand" value="Redmi"> Redmi
-      <input type="checkbox" formControlName="selectedProductBrand" value="Samsung"> Samsung
-      <input type="checkbox" formControlName="selectedProductBrand" value="HP"> HP
-      <input type="checkbox" formControlName="selectedProductBrand" value="Dell"> Dell
+    <div class="productBrand-checkboxes" *ngFor="let pb of productBrands">
+      <label>
+        <input type="checkbox" (change)="toggleproductBrand(pb)" [checked]="selectedproductBrands.includes(pb)" />
+        {{ pb }}
+      </label>
     </div>
 </div>
 <div class="form-group">
 <label for="image">Image</label>
 <input
 type="file"
-id="image"
+id="profilePic"
 accept="image/*"
 (change)="onImageSelected($event)"
-formControlName="image"
+formControlName="profilePic"
 />
     <div class="form-group">
       </div>
       <label for="contactNumber">Contact Number</label>
-      <input type="text" class="form-control" id="contactNumber" formControlName="contactNumber">
+      <input type="text" class="form-control" id="contactnumber" formControlName="contactnumber">
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
     </form>
