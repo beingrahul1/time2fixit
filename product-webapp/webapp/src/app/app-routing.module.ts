@@ -14,6 +14,7 @@ import { HomeserviceComponent } from './homeservice/homeservice.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { UserTrackerComponent } from './user-tracker/user-tracker.component';
+import { ServicelistComponent } from './servicelist/servicelist.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -26,7 +27,7 @@ const routes: Routes = [
   { path: 'feedback', component: FeedbackComponent },
   { path: 'showfeedback', component: FeedbackDataComponent },
   { path: 'updateuser', component: UpdateuserComponent },
-
+   { path: 'search', component: ServicelistComponent },
   { path: 'homeservice', component: HomeserviceComponent },
   { path: 'navbar', component: NavbarComponent },
   { path: 'aboutus', component: AboutusComponent },
