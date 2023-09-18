@@ -7,7 +7,12 @@ import { ProviderUpdateComponent } from './provider-update/provider-update.compo
 import { OrderTrackingServiceComponent } from './order-tracking-service/order-tracking-service.component';
 import { ServiceCenterProfileComponent } from './service-center-profile/service-center-profile.component';
 import { ServiceProviderRegistrationComponent } from './service-provider-registration/service-provider-registration.component';
+<<<<<<< HEAD
 import { UpdateOrderTrackingComponent } from './update-order-tracking/update-order-tracking.component';
+=======
+import { UserRegistrationComponent } from './user-registration/user-registration.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+>>>>>>> a1bbbe0 (getuser  dashboard update)
 
 import { UserRegistrationComponent } from './user-registration/user-registration.component';
 import { HomeserviceComponent } from './homeservice/homeservice.component';
@@ -42,10 +47,15 @@ const routes: Routes = [
   { path: 'feedback', component: FeedbackComponent },
   { path: 'showfeedback', component: FeedbackDataComponent },
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   { path: 'updateuser', component: UpdateuserComponent },
   { path: 'booking', component: BookingFormComponent },
   { path: 'appointments', component: AppointmentComponent },
+=======
+  { path: 'updateuser', component: UpdateuserComponent },
+  {path: 'dashboard', component:DashboardComponent}
+>>>>>>> a1bbbe0 (getuser  dashboard update)
 
 >>>>>>> f9d8f16 (completed)
 

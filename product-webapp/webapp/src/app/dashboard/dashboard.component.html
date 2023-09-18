@@ -1,0 +1,51 @@
+<link rel="stylesheet" href="dashboard.component.css">
+<nav class="navbar  bg-primary sticky-top">
+  <button type="button" class="btn btn-light"><a class="navbar-brand" href="#">Time2FixIt</a></button>
+  <div class="btn-left">
+    <!-- <button type="button" class="btn btn-left btn-outline-light" routerLink="/showfeedback">show feedback</button> -->
+  </div>
+</nav>
+<div class="container mt-5">
+
+</div>
+<div class="container registration-container"><br>
+  <div class="row">
+    <div class="col-md-5">
+      <img src="assets/getuser.jpeg" alt="feedback image" class="img-fluid">
+    </div>
+    <div class="col-md-7">
+      <h2>Time2FixIt</h2>
+      <p></p>
+      <form class="mt-4">
+        <!-- First Div: Email, Shop Name, Phone number, securityQuestion, securityAnswere -->
+        <div class="row">
+          <div class="">
+            <div class="">
+              <div class="container">
+                <h2 style="color:rgb(78,197,248)">User Details</h2>
+                
+                  <h3>Welcome {{user2.email}}</h3>
+                  <p>{{user2.username}}</p>
+                  <p>{{user2.phoneNumber}}</p>
+                  <!-- <p>{{user2.securityQuestion}}</p>
+                  <p>{{user2.securityAnswer}}</p> -->
+                  
+                  <a routerLink="/updateuser"><button type="submit" class="btn btn-primary" (click)="edit()" >edit</button></a>
+              
+              </div>
+              <!-- <div class="col-md-5">
+
+              </div> -->
+            </div>
+
+          </div>
+        </div>
+      </form>
+    </div>
+    <!-- Third Div: Image -->
+  </div>
+  <br>
+</div>
+<footer class="bg-primary text-white text-center py-3">
+  &copy; time2fixit 2023
+</footer>

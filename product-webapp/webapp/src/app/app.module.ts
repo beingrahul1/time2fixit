@@ -17,6 +17,7 @@ import { FeedbackComponent } from './feedback/feedback.component';
 import { FeedbackDataComponent } from './feedback-data/feedback-data.component';
 import { UpdateuserComponent } from './updateuser/updateuser.component';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { HomeserviceComponent } from './homeservice/homeservice.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
@@ -27,6 +28,9 @@ import { ServiceCenterProfileComponent } from './service-center-profile/service-
 import { OrderTrackingServiceComponent } from './order-tracking-service/order-tracking-service.component';
 import { UpdateOrderTrackingComponent } from './update-order-tracking/update-order-tracking.component';
 import { ServicelistComponent } from './servicelist/servicelist.component';
+=======
+import { DashboardComponent } from './dashboard/dashboard.component';
+>>>>>>> a1bbbe0 (getuser  dashboard update)
 
 =======
 import { BookingFormComponent } from './booking-form/booking-form.component';
@@ -47,6 +51,7 @@ import { GadgetDetailsComponent } from './gadget-details/gadget-details.componen
     FeedbackDataComponent,
     UpdateuserComponent,
 <<<<<<< HEAD
+<<<<<<< HEAD
     HomeserviceComponent,
     NavbarComponent,
     AboutusComponent,
@@ -64,6 +69,9 @@ import { GadgetDetailsComponent } from './gadget-details/gadget-details.componen
     AppointmentComponent,
     GadgetDetailsComponent,
 >>>>>>> f9d8f16 (completed)
+=======
+    DashboardComponent
+>>>>>>> a1bbbe0 (getuser  dashboard update)
   ],
   imports: [
     BrowserModule,

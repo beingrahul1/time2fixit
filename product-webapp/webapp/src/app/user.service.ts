@@ -30,6 +30,7 @@ return this.http.delete<any>(`http://localhost:2222/feedback/${email}`);
   getServiceProfile(email:String) {
     return this.http.get<any[]>(`http://localhost:2222/profile/service/${email}`);
   }
+<<<<<<< HEAD
   registerTrack(tracking:Order){
     return this.http.post<Order>(`http://localhost:1234/track`,tracking);
   }
@@ -44,4 +45,9 @@ return this.http.delete<any>(`http://localhost:2222/feedback/${email}`);
 {
 return this.http.get<Order>(`http://localhost:1234/track/${bookingId}`);
 }
+=======
+  displayuser(user1:user){
+    return this.http.post<user>('http://localhost:1234/customer/get',user1);
+  }
+>>>>>>> a1bbbe0 (getuser  dashboard update)
 }
