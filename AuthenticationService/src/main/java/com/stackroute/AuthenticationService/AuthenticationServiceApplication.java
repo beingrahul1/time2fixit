@@ -7,6 +7,7 @@ import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
 import org.springframework.amqp.support.converter.MessageConverter;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -21,12 +22,21 @@ public class AuthenticationServiceApplication {
 	public final static String queue="cgiqueue";
 	public static String exchange="cgiexchange";
 	public  static String routingKey="cgirk";
+	
+	public final static String otpqueue="otpqueue";
+	public  static String otproutingKey="otprk";
 
 	
 	@Bean
 	public org.springframework.amqp.core.Queue getQueue()
 	{
 		return new org.springframework.amqp.core.Queue(queue);
+	}
+	
+	@Bean
+	public org.springframework.amqp.core.Queue getQueue1()
+	{
+		return new org.springframework.amqp.core.Queue(otpqueue);
 	}
 	
 	
@@ -37,9 +47,16 @@ public class AuthenticationServiceApplication {
 	}
 	
 	@Bean
-	public Binding bindQtoExchange(org.springframework.amqp.core.Queue queue,TopicExchange exchange)
+	public Binding bindQtoExchange(@Qualifier("getQueue") org.springframework.amqp.core.Queue queue,TopicExchange exchange)
 	{
 		return BindingBuilder.bind(queue).to(exchange).with(routingKey);
+		
+	}
+	
+	@Bean
+	public Binding bindQtoExchange1(@Qualifier("getQueue1") org.springframework.amqp.core.Queue otpqueue,TopicExchange exchange)
+	{
+		return BindingBuilder.bind(otpqueue).to(exchange).with(otproutingKey);
 		
 	}
 	

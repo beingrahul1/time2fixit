@@ -1,10 +1,10 @@
 package com.stackroute.AuthenticationService.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.stackroute.AuthenticationService.model.User;
-import com.stackroute.AuthenticationService.repo.UserRepository;
+//import com.stackroute.AuthenticationService.model.User;
+//import com.stackroute.AuthenticationService.repo.UserRepository;
 
 @Service
 public class UserServiceImpl implements UserService{
