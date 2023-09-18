@@ -1,13 +1,17 @@
 package com.stackroute.NotificationService.controller;
 
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.stackroute.NotificationService.model.Email;
+import com.stackroute.NotificationService.model.OTP;
 import com.stackroute.NotificationService.service.EmailService;
 
 
@@ -27,6 +31,7 @@ public class EmailSendController {
 //    }
 //    
     Email e1;
+    int sentotp;
     
    @RabbitListener(queues = "otpqueue")
    public void sendOTP(Email e2)
@@ -37,10 +42,23 @@ public class EmailSendController {
 	   String subject = "OTP Validation";
 	   int min = 1000;
 	   int max = 9999;
-	   int otp =  (int)(Math.random()*(max-min+1)+min);  
-	   String body = "OTP for updating your password is "+otp;
+	   sentotp =  (int)(Math.random()*(max-min+1)+min);  
+	   String body = "OTP for updating your password is "+sentotp;
 //	   MultipartFile[] file = null;
 	   emailService.sendMail(to, cc, subject, body);
+   }
+   
+   @PostMapping("otp/validate")
+   public ResponseEntity<?> validateOtp(@RequestBody OTP x)
+   {
+	   if(sentotp == x.getOtp())
+	   {
+		   return new ResponseEntity<String>("Valid OTP", HttpStatus.OK);
+	   }
+	   else
+	   {
+		   return new ResponseEntity<String>("Invalid OTP", HttpStatus.NOT_FOUND);
+	   }
    }
     
 //	@RabbitListener(queues = "BookingQueue")
