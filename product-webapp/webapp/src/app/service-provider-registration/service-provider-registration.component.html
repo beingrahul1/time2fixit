@@ -3,7 +3,7 @@
 <nav class="navbar  bg-primary sticky-top">
   <button type="button" class="btn btn-light"><a class="navbar-brand" href="#">Time2FixIt</a></button>
   <div class="btn-left">
-    <button type="button" class="btn btn-left btn-outline-light" routerLink="/login">Log In</button>
+    <button type="button" class="btn btn-left btn-outline-light">Log In</button>
     <button type="button" class="btn btn-left btn-outline-light" routerLink="/user-registration">Sign Up as User</button>
   </div>
 </nav>
@@ -32,9 +32,24 @@
               <label for="confirmPassword" class="label">Confirm Password</label>
               <input type="password" class="form-control input" id="confirmPassword" placeholder="Confirm your password" [(ngModel)]="user1.confirmPassword" [ngModelOptions]="{standalone: true}">
             </div>
-            <div class="form-group">
+            <!-- <div class="form-group">
               <label for="phoneNumber" class="label">Phone Number</label>
               <input type="tel" class="form-control input" id="phoneNumber" placeholder="Enter your phone number" [(ngModel)]="user1.phoneNumber" [ngModelOptions]="{standalone: true}">
+            </div> -->
+            <div class="form-group">
+              <label for="phoneNumber" class="label">PHONE NUMBER</label>
+              <input
+                type="tel"
+                class="form-control input"
+                id="phoneNumber"
+                placeholder="Enter your phone number"
+                [(ngModel)]="user1.phoneNumber"
+                [ngModelOptions]="{standalone: true}"
+                (input)="validatePhoneNumber()"
+              >
+            </div>
+            <div *ngIf="user1.phoneNumber && user1.phoneNumber.toString().length !== 10" class="text-danger">
+              Please enter a 10-digit phone number.
             </div>
           </div>
           <!-- Second Div: Shop Owner Name, Service Type, Address, Security Question, Security Answer -->
@@ -81,6 +96,6 @@
   </div>
   <br>
 </div>
-<footer class="bg-primary text-white text-center py-3">
+<footer class="bg-primary mt-5 text-white text-center py-3">
   &copy; time2fixit 2023
 </footer>

@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { feedback } from './feedback/feedback.model';
+import { Order } from './order-tracking-service/tracking.model';
 import { user } from './user-registration/user.model';
 
 @Injectable({
@@ -24,7 +25,21 @@ export class UserService {
   {
 return this.http.delete<any>(`http://localhost:2222/feedback/${email}`);
   }
-  updateuser(user1:user){
-    return this.http.post<user>('http://localhost:1234/customer/update',user1)
+  getServiceProfile(email:String) {
+    return this.http.get<any[]>(`http://localhost:2222/profile/service/${email}`);
   }
+  registerTrack(tracking:Order){
+    return this.http.post<Order>(`http://localhost:1234/track`,tracking);
+  }
+  updateTrack(bookingId:number,order:Order) {
+    return this.http.put<Order>(`http://localhost:1234/track/${bookingId}`,order);
+  }
+  getTrack() {
+    return this.http.get<Order[]>(`http://localhost:1234/track`);
+  }
+
+  searchTrackById(bookingId:number)
+{
+return this.http.get<Order>(`http://localhost:1234/track/${bookingId}`);
+}
 }

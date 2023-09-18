@@ -1,0 +1,88 @@
+<link rel="stylesheet" href="order-tracking-service.component.css">
+<nav class="navbar  bg-primary sticky-top">
+    <button type="button" class="btn btn-light"><a class="navbar-brand" href="#">Time2FixIt</a></button>
+    <div class="btn-left">
+        <!-- <button type="button" class="btn btn-left btn-outline-light" routerLink="/showfeedback">show feedback</button> -->
+    </div>
+</nav>
+
+<br>
+<div class="container">
+    <div class="row">
+        <!-- Form column -->
+        <div class="col-md-8">
+            <h2>Order Tracking Service</h2>
+            <form (ngSubmit)="submitOrder()">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="userEmail" class="label">User Email:</label>
+                      <input type="email" class="form-control input" id="userEmail" [(ngModel)]="order.userEmail" name="userEmail">
+                    </div>
+                    <div class="form-group">
+                      <label for="status" class="label">Status:</label>
+                      <input type="text" class="form-control input" id="status" [(ngModel)]="order.status" name="status">
+                    </div>
+                    <div class="form-group">
+                      <label for="deviceType" class="label">Device Type:</label>
+                      <input type="text" class="form-control input" id="deviceType" [(ngModel)]="order.deviceType" name="deviceType">
+                    </div>
+                    <div class="form-group">
+                      <label for="modelNo" class="label">Model No:</label>
+                      <input type="text" class="form-control input" id="modelNo" [(ngModel)]="order.modelNo" name="modelNo">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="serviceProviderEmail" class="label">Service Provider Email:</label>
+                      <input type="email" class="form-control input" id="serviceProviderEmail" [(ngModel)]="order.serviceProviderEmail" name="serviceProviderEmail">
+                    </div>
+                    <div class="form-group">
+                      <label for="bookingId" class="label">Booking ID:</label>
+                      <input type="number" class="form-control input" id="bookingId" [(ngModel)]="order.bookingId" name="bookingId">
+                    </div>
+                    <div class="form-group">
+                      <label for="deviceName" class="label">Device Name:</label>
+                      <input type="text" class="form-control input" id="deviceName" [(ngModel)]="order.deviceName" name="deviceName">
+                    </div>
+                    <div class="form-group">
+                      <label for="issueType" class="label">Issue Type:</label>
+                      <input type="text" class="form-control input" id="issueType" [(ngModel)]="order.issueType" name="issueType">
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="issueDescription" class="label">Issue Description:</label>
+                  <textarea class="form-control input" id="issueDescription" [(ngModel)]="order.issueDescription" name="issueDescription"></textarea>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="expectedTime" class="label">Expected Time:</label>
+                      <input type="text" class="form-control input" id="expectedTime" [(ngModel)]="order.expectedTime" name="expectedTime">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="costDate" class="label">Total Cost:</label>
+                      <input type="text" class="form-control input" id="costDate" [(ngModel)]="order.costDate" name="costDate">
+                    </div>
+                  </div>
+                </div>
+                <button class="btn btn-primary">Submit</button>
+              </form>
+              
+        </div>
+        <!-- Image column -->
+        <div class="col-md-4">
+            <img src="assets/track.png" alt="track" class="img-fluid">
+        </div>
+    </div>
+</div>
+
+<br>
+<br>
+
+<footer class="bg-primary mt-5 text-white text-center py-3">
+    &copy; time2fixit 2023
+</footer>

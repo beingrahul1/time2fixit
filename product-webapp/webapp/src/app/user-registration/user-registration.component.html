@@ -4,16 +4,18 @@
     <button type="button" class="btn btn-light"><a class="navbar-brand" href="#">Time2FixIt</a>
     </button>
     <div class="btn-left">
-        <button type="button" class="btn btn-left btn-outline-light" routerLink="/login">Log In</button>
+        <button type="button" class="btn btn-left btn-outline-light">Log In</button>
         <button type="button" class="btn btn-left btn-outline-light" routerLink="/service-provider-registration">Sign Up as Service</button>
     </div>
 </nav>
 <div class="container registration-container"><br>
 
     <div class="row">
+         <!-- image -->
         <div class="col-lg-5">
             <img src="assets/registration-image.jpg" alt="Registration Image" class="img-fluid img-sm img-md img-lg">
         </div>
+         <!-- images over-->
         <div class="col-md-7">
             <h2>Time2FixIt</h2> 
             <p></p>
@@ -41,10 +43,25 @@
                     </div>
                     <!-- Second Div: Phone Number, Security Question, Security Answer -->
                     <div class="col-md-6">
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <label for="phoneNumber" class="label">PHONE NUMBER</label>
                             <input type="tel" class="form-control input" id="phoneNumber" placeholder="Enter your phone number" [(ngModel)]="user1.phoneNumber" [ngModelOptions]="{standalone: true}">
-                        </div>
+                        </div> -->
+                        <div class="form-group">
+                            <label for="phoneNumber" class="label">PHONE NUMBER</label>
+                            <input
+                              type="tel"
+                              class="form-control input"
+                              id="phoneNumber"
+                              placeholder="Enter your phone number"
+                              [(ngModel)]="user1.phoneNumber"
+                              [ngModelOptions]="{standalone: true}"
+                              (input)="validatePhoneNumber()"
+                            >
+                          </div>
+                          <div *ngIf="user1.phoneNumber && user1.phoneNumber.toString().length !== 10" class="text-danger">
+                            Please enter a 10-digit phone number.
+                          </div>
                         <div class="form-group">
                             <label for="securityQuestion" class="label">SECURITY QUESTION</label>
                             <select class="form-control input" id="securityQuestion" [(ngModel)]="user1.securityQuestion" name="securityQuestion" [ngModelOptions]="{standalone: true}">
@@ -67,6 +84,6 @@
     </div>
 </div>
 <br><p></p>
-<footer class="bg-primary text-white text-center py-3">
+<footer class="bg-primary mt-5 text-white text-center py-3">
     &copy; time2fixit 2023
 </footer>

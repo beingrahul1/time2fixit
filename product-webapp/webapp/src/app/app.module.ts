@@ -8,7 +8,7 @@ import { ServiceProviderRegistrationComponent } from './service-provider-registr
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
-import { ReactiveFormsModule } from '@angular/forms';
+
 
 import { LoginComponent } from './login/login.component';
 import { ProviderUpdateComponent } from './provider-update/provider-update.component';
@@ -16,39 +16,39 @@ import { ProviderUpdateComponent } from './provider-update/provider-update.compo
 import { FeedbackComponent } from './feedback/feedback.component';
 import { FeedbackDataComponent } from './feedback-data/feedback-data.component';
 import { UpdateuserComponent } from './updateuser/updateuser.component';
-<<<<<<< HEAD
 import { HomeserviceComponent } from './homeservice/homeservice.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { FooterComponent } from './footer/footer.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
-=======
 import { UserTrackerComponent } from './user-tracker/user-tracker.component';
->>>>>>> 8ef51d0 (Tracking)
-
+import { ServiceCenterProfileComponent } from './service-center-profile/service-center-profile.component';
+import { OrderTrackingServiceComponent } from './order-tracking-service/order-tracking-service.component';
+import { UpdateOrderTrackingComponent } from './update-order-tracking/update-order-tracking.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserRegistrationComponent,
     ServiceProviderRegistrationComponent,
-
     HomeComponent,
     LoginComponent,
-ProviderUpdateComponent,
+    ProviderUpdateComponent,
     HomeComponent,
     FeedbackComponent,
     FeedbackDataComponent,
     UpdateuserComponent,
-<<<<<<< HEAD
     HomeserviceComponent,
     NavbarComponent,
     AboutusComponent,
     FooterComponent,
-    ForgotPasswordComponent
-=======
-    UserTrackerComponent
->>>>>>> 8ef51d0 (Tracking)
+    ForgotPasswordComponent,
+    UserTrackerComponent,
+    FeedbackComponent,
+    FeedbackDataComponent,
+    ServiceCenterProfileComponent,
+    OrderTrackingServiceComponent,
+    UpdateOrderTrackingComponent
   ],
   imports: [
     BrowserModule,

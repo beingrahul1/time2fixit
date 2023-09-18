@@ -1,0 +1,82 @@
+
+<link rel="stylesheet" href="service-center-profile.component.css">
+<nav class="navbar  bg-primary sticky-top">
+    <button type="button" class="btn btn-light"><a class="navbar-brand" href="#">Time2FixIt</a></button>
+    <div class="btn-left">
+        <!-- <button type="button" class="btn btn-left btn-outline-light" routerLink="/showfeedback">show feedback</button> -->
+    </div>
+</nav>
+<div class="container registration-container"><br>
+    <div class="row">
+        <div class="col-md-7">
+            <h2>Time2FixIt</h2>
+            <p></p>
+            <form class="mt-4">
+                <!-- First Div: Email, Shop Name, Password, Confirm Password, Phone Number -->
+                <div class="row">
+                    <div class="">
+                        <div class="">
+                            <!-- <div class="container" *ngFor="let serviceProfile of serviceProfile"> -->
+                                <div class="container" >
+                                <h2>Service Center Profile </h2>
+
+                                <div class="form-group">
+                                    <label class=" label" for="name">Shop Name: </label> OnePlus
+                                     <!-- {{serviceProfile.email}} -->
+                                </div>
+                                <div class="form-group">
+                                    <label class="label" for="email">Email:</label>   service@oneplus.com
+                                </div>
+                                <div class="form-group">
+                                    <label class="label" for="phone">Shop Owner Name:</label> ABCD
+                                    
+                                </div>
+                                <div class="form-group">
+                                    <label class="label" for="phone">Address:</label>   Akshya Nagar 1st Block 1st Cross, Rammurthy nagar, Bangalore-560016 ...
+
+                                </div>
+                                <div class="form-group">
+                                    <label class="label" for="phone">Contact number :</label>   1234567891
+                                </div>
+                                <div class="form-group">
+                                    <label class="label" for="phone">product brand:</label>
+                                    <!-- <select [(ngModel)]="selectedOption">
+                                        <option value="" disabled selected>Select an option</option>
+                                        <option *ngFor="let item of dataList" [value]="item.value">{{ item.label }}</option>
+                                      </select> -->
+                                      <select class="form-control" >
+                                        <option value="" disabled selected>Product brand</option>
+                                        <option >oneplus </option>
+                                        <option >oneplus audio </option>
+                                      </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="label" for="phone">Service products:</label>
+                                    <!-- <select [(ngModel)]="selectedOption">
+                                        <option value="" disabled selected>Select an option</option>
+                                        <option *ngFor="let item of dataList" [value]="item.value">{{ item.label }}</option>
+                                      </select> -->
+                                      <select class="form-control">
+                                        <option value="" disabled selected>Click to view products</option>
+                                        <option >smartphone  </option>
+                                        <option >earbuds </option>
+                                      </select>
+                                </div>
+                            </div>
+                            <!-- <div class="col-md-5">
+  
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!-- Third Div: Image -->
+        <div class="col-md-5">
+            <img src="assets/serviceprofile.png" alt="feedback image" class="img-fluid">
+        </div>
+    </div>
+</div>
+<footer class="bg-primary mt-5 text-white text-center py-3">
+    &copy; time2fixit 2023
+</footer>

@@ -1,0 +1,201 @@
+<nav class="navbar  bg-primary sticky-top">
+  <button type="button" class="btn btn-light"><a class="navbar-brand" href="#">Time2FixIt</a></button>
+  <div class="btn-left">
+    <!-- <button type="button" class="btn btn-left btn-outline-light" routerLink="/showfeedback">show feedback</button> -->
+  </div>
+</nav>
+<br>
+
+<!--   
+  <div class="container" *ngFor="let order of order">
+    <h1>Order Details</h1>
+    <form (ngSubmit)="updateTrack()">
+      <div class="form-group">
+        <label>User Email:</label>
+        <span class="form-control">{{ order.userEmail }}</span>
+      </div>
+      <div class="form-group">
+        <label>Service Provider Email:</label>
+        <span class="form-control">{{ order.serviceProviderEmail }}</span>
+      </div>
+      <div class="form-group">
+        <label>Status:</label>
+        <input name="status" class="form-control" [(ngModel)]="ord.status">{{ order.status }}
+      </div>
+      <div class="form-group">
+        <label>Booking ID:</label>
+        <span class="form-control">{{ order.bookingId }}</span>
+      </div>
+      <div class="form-group">
+        <label>Device Type:</label>
+        <span class="form-control">{{ order.deviceType }}</span>
+      </div>
+      <div class="form-group">
+        <label>Device Name:</label>
+        <span class="form-control">{{ order.deviceName }}</span>
+      </div>
+      <div class="form-group">
+        <label>Model No:</label>
+        <span class="form-control">{{ order.modelNo }}</span>
+      </div>
+      <div class="form-group">
+        <label>Issue Type:</label>
+        <span class="form-control">{{ order.issueType }}</span>
+      </div>
+      <div class="form-group">
+        <label>Issue Description:</label>
+        <span class="form-control">{{ order.issueDescription }}</span>
+      </div>
+      <div class="form-group">
+        <label>Expected Time:</label>
+        <span class="form-control">{{ order.expectedTime }}</span>
+      </div>
+      <div class="form-group">
+        <label>Cost Date:</label>
+        <span class="form-control">{{ order.costDate }}</span>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div> -->
+
+<link rel="stylesheet" href="update-order-tracking.component.css">
+<br>
+<div class="container">
+  <div class="row">
+    <!-- Form column -->
+    <div class="col-md-7">
+      <h2>Update Tracking Status</h2>
+
+      <div class="row">
+        <label class="label">
+          <h5>Enter Booking ID</h5>
+        </label>
+        <input type="number" [(ngModel)]="searchTxt" class="form-control input">
+        <br>
+        <button (click)="searchById()" type="button" class="btn btn-primary"> search</button>
+        <br>
+
+        <div>
+          <br>
+          <label>
+            <h5>Status</h5>
+          </label>
+          <select id="selectOption" [(ngModel)]="player.status" class="form-select form-select-sm">
+            <option *ngFor="let option of options" [value]="option">{{ option }}</option>
+          </select>
+        </div>
+        <div class="col-md-6">
+          <div>
+            <label class="label">
+              User Email
+            </label>
+            <input type="text" [(ngModel)]="player.userEmail" class="form-control input" readonly>
+          </div>
+          <!-- <div>
+                    <label class="label">
+                      Device Type
+                    </label>
+                    <input type="text" [(ngModel)]="player.deviceType" class="form-control input" readonly>
+                  </div>
+                  <div>
+                    <label class="label">
+                      Issue Type
+                    </label>
+                    <input type="text" [(ngModel)]="player.issueType" class="form-control input" readonly>
+                  </div> -->
+
+        </div>
+        <div class="col-md-6">
+          <!-- <div>
+                    <label class="label">
+                      Service Provider Email
+                    </label>
+                    <input type="text" [(ngModel)]="player.serviceProviderEmail" class="form-control input" readonly>
+                  </div> -->
+          <div>
+            <!-- <label class="label">
+                      Device Name
+                    </label>
+                    <input type="text" [(ngModel)]="player.deviceName" class="form-control input" readonly>
+                  </div> -->
+            <div>
+              <label class="label">
+                Issue Description
+              </label>
+              <input type="text" [(ngModel)]="player.issueDescription" class="form-control input" readonly>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <!-- <div>
+                    <label class="label">
+                      Expected time
+                    </label>
+                    <input type="text" [(ngModel)]="player.expectedTime" class="form-control input" readonly>
+                  </div>
+                   -->
+          </div>
+          <div class="col-md-6">
+            <!-- <div>
+                    <label class="label">
+                      Date
+                    </label>
+                    <input type="text" [(ngModel)]="player.costDate" class="form-control input" readonly>
+                  </div>
+    -->
+          </div>
+        </div>
+        <div *ngIf="showMessage" class="message">
+          {{ message }}
+        </div>
+        <br>
+        <button (click)="updatePlayer()" type="button" class="btn btn-primary"> Update Status </button>
+      </div>
+
+    </div>
+    <!-- Image column -->
+    <div class="col-md-5">
+      <img src="assets/trackstatus.png" alt="track" class="img-fluid">
+    </div>
+  </div>
+</div>
+<br>
+<div class="container">
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>User Email</th>
+        <th>Service Provider Email</th>
+        <th>Status</th>
+        <th>Booking ID</th>
+        <th>Device Type</th>
+        <th>Device Name</th>
+        <th>Model No</th>
+        <th>Issue Type</th>
+        <th>Issue Description</th>
+        <th>Expected Time</th>
+        <th>Cost Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let player of players">
+        <td>{{ player.userEmail }}</td>
+        <td>{{ player.serviceProviderEmail }}</td>
+        <td>{{ player.status }}</td>
+        <td>{{player.bookingId }}</td>
+        <td>{{ player.deviceType }}</td>
+        <td>{{ player.deviceName }}</td>
+        <td>{{ player.modelNo }}</td>
+        <td>{{ player.issueType }}</td>
+        <td>{{ player.issueDescription }}</td>
+        <td>{{ player.expectedTime }}</td>
+        <td>{{ player.costDate }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<footer class="bg-primary mt-5 text-white text-center py-3">
+  &copy; time2fixit 2023
+</footer>

@@ -24,8 +24,12 @@ public class Tracking {
 	private String issueType;
 	private String issueDescription;
 	private String expectedTime;
+<<<<<<< HEAD
 	private int cost;
 	private String date;
+=======
+	private int costDate;
+>>>>>>> 1f4adbf (order tracking done)
 	
 
 }

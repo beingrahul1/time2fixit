@@ -14,6 +14,7 @@ export class ServiceproviderService {
   }
 
 
+
   serviceProviderList(): Observable<any>
   {
     return this.http.get<provider[]>(`http:localhost:2222/apis/findAll`, {responseType: "text" as "json"});
@@ -214,4 +215,5 @@ export class ServiceproviderService {
      return this.http.get<provider[]>(`http://localhost:2222/apis/matchAllProvidersAllFields?email=${encodeURIComponent(query)}`, {responseType: "text" as "json"});
    }
  
+
 }
