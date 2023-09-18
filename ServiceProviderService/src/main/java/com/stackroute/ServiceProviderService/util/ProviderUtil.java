@@ -31,16 +31,54 @@ public class ProviderUtil {
         val  matchQuery = new MatchQuery.Builder();
         return matchQuery.field("email").query(email).build();
     }
-    public static Supplier<Query> supplierWithaddressAndserviceTypeAndshopownername(String query){
-        Supplier<Query> supplier = ()->Query.of(q->q.multiMatch(multiMatchQuerywithaddressAndserviceTypeAndshopownername(query)));
+    public static Supplier<Query> supplierWithserviceProduct(String query){
+        Supplier<Query> supplier = ()->Query.of(q->q.match(matchQueryWithserviceProduct(query)));
         return supplier;
     }
 
-    public static MultiMatchQuery multiMatchQuerywithaddressAndserviceTypeAndshopownername(String query) {
-        val  matchQuery = new MultiMatchQuery.Builder();
-        return matchQuery.fields("address", "serviceType","shopownername").query(query).build();
-        
+    public static MatchQuery matchQueryWithserviceProduct(String query){
+        val  matchQuery = new MatchQuery.Builder();
+        return matchQuery.field("serviceProduct").query(query).build();
     }
+
+    public static Supplier<Query> supplierWithproductBrand(String query){
+        Supplier<Query> supplier = ()->Query.of(q->q.match(matchQueryWithproductBrand (query)));
+        return supplier;
+    }
+
+    public static MatchQuery matchQueryWithproductBrand(String query){
+        val  matchQuery = new MatchQuery.Builder();
+        return matchQuery.field("productBrand").query(query).build();
+    }
+    public static Supplier<Query> supplierWithaddress(String query){
+        Supplier<Query> supplier = ()->Query.of(q->q.match(matchQueryWithaddress (query)));
+        return supplier;
+    }
+
+    public static MatchQuery matchQueryWithaddress(String query){
+        val  matchQuery = new MatchQuery.Builder();
+        return matchQuery.field("address").query(query).build();
+    }
+    public static Supplier<Query> supplierWithshopname(String query){
+        Supplier<Query> supplier = ()->Query.of(q->q.match(matchQueryWithshopname (query)));
+        return supplier;
+    }
+
+    public static MatchQuery matchQueryWithshopname(String query){
+        val  matchQuery = new MatchQuery.Builder();
+        return matchQuery.field("shopname").query(query).build();
+    }
+    public static Supplier<Query> supplierWithshopownername(String query){
+        Supplier<Query> supplier = ()->Query.of(q->q.match(matchQueryWithshopownername (query)));
+        return supplier;
+    }
+
+    public static MatchQuery matchQueryWithshopownername(String query){
+        val  matchQuery = new MatchQuery.Builder();
+        return matchQuery.field("shopownername").query(query).build();
+    }
+
+
     public static Supplier<Query> supplierWithAllFields(String query){
         Supplier<Query> supplier = ()->Query.of(q->q.multiMatch(multiMatchQuery(query)));
         return supplier;
@@ -263,6 +301,153 @@ public class ProviderUtil {
         return matchQuery.fields("contactnumber", "email").query(query).build();
         
     }
+    public static Supplier<Query> supplierWithshopnameAndshopownernameAndaddress(String query){
+        Supplier<Query> supplier = ()->Query.of(q->q.multiMatch(multiMatchQuerywithshopnameAndshopownernameAndaddress(query)));
+        return supplier;
+    }
+
+    public static MultiMatchQuery multiMatchQuerywithshopnameAndshopownernameAndaddress(String query) {
+        val  matchQuery = new MultiMatchQuery.Builder();
+        return matchQuery.fields("shopname", "shopownername", "address").query(query).build();}
+
+public static Supplier<Query> supplierWithshopnameAndshopownernameAndserviceProduct(String query){
+        Supplier<Query> supplier = ()->Query.of(q->q.multiMatch(multiMatchQuerywithshopnameAndshopownernameAndserviceProduct(query)));
+        return supplier;
+    }
+public static MultiMatchQuery multiMatchQuerywithhopnameAndshopownernameAndserviceProduct(String query) {
+    val  matchQuery = new MultiMatchQuery.Builder();
+    return matchQuery.fields("shopname", "shopownername", "serviceProduct").query(query).build();}
+public static Supplier<Query> supplierWithshopownernameAndaddressAndproductBrand(String query){
+    Supplier<Query> supplier = ()->Query.of(q->q.multiMatch(multiMatchQuerywithshopownernameAndaddressAndproductBrand(query)));
+    return supplier;
+}
+
+public static MultiMatchQuery multiMatchQuerywithshopownernameAndaddressAndproductBrand(String query) {
+    val  matchQuery = new MultiMatchQuery.Builder();
+    return matchQuery.fields("shopownername", "address", "productBrand").query(query).build();}
+
+
+
+public static MultiMatchQuery multiMatchQuerywithshopnameAndshopownernameAndserviceProduct(String query) {
+    val  matchQuery = new MultiMatchQuery.Builder();
+    return matchQuery.fields("shopname", "shopownername", "serviceProduct").query(query).build();}
+
+public static Supplier<Query> supplierWithshopnameAndshopownernameAndproductBrand(String query){
+        Supplier<Query> supplier = ()->Query.of(q->q.multiMatch(multiMatchQuerywithshopnameAndshopownernameAndproductBrand(query)));
+        return supplier;
+    }
+
+    public static MultiMatchQuery multiMatchQuerywithshopnameAndshopownernameAndproductBrand(String query) {
+        val  matchQuery = new MultiMatchQuery.Builder();
+        return matchQuery.fields("shopname", "shopownername", "productBrand").query(query).build();}
+    
+    public static Supplier<Query> supplierWithshopnameAndaddressAndproductBrand(String query){
+        Supplier<Query> supplier = ()->Query.of(q->q.multiMatch(multiMatchQuerywithshopnameAndaddressAndproductBrand(query)));
+        return supplier;
+    }
+
+    public static MultiMatchQuery multiMatchQuerywithshopnameAndaddressAndproductBrand(String query) {
+        val  matchQuery = new MultiMatchQuery.Builder();
+        return matchQuery.fields("shopname", "address", "productBrand").query(query).build();}
+    public static Supplier<Query> supplierWithshopnameAndaddressAndserviceProduct(String query){
+        Supplier<Query> supplier = ()->Query.of(q->q.multiMatch(multiMatchQuerywithshopnameAndaddressAndserviceProduct(query)));
+        return supplier;
+    }
+
+    public static MultiMatchQuery multiMatchQuerywithshopnameAndaddressAndserviceProduct(String query) {
+        val  matchQuery = new MultiMatchQuery.Builder();
+        return matchQuery.fields("shopname", "address", "serviceProduct").query(query).build();}
+    public static Supplier<Query> supplierWithshopnameAndserviceProductAndproductBrand(String query){
+        Supplier<Query> supplier = ()->Query.of(q->q.multiMatch(multiMatchQuerywithshopnameAndserviceProductAndproductBrand(query)));
+        return supplier;
+    }
+
+    public static MultiMatchQuery multiMatchQuerywithshopnameAndserviceProductAndproductBrand(String query) {
+        val  matchQuery = new MultiMatchQuery.Builder();
+        return matchQuery.fields("shopname", "serviceProduct", "productBrand"
+).query(query).build();}
+    
+    public static Supplier<Query> supplierWithaddressAndserviceProductAndproductBrand(String query){
+        Supplier<Query> supplier = ()->Query.of(q->q.multiMatch(multiMatchQuerywithaddressAndserviceProductAndproductBrand(query)));
+        return supplier;
+    }
+
+    public static MultiMatchQuery multiMatchQuerywithaddressAndserviceProductAndproductBrand(String query) {
+        val  matchQuery = new MultiMatchQuery.Builder();
+        return matchQuery.fields("address", "serviceProduct", "productBrand").query(query).build();}
+    
+    public static Supplier<Query> supplierWithshopownernameAndaddressAndserviceProduct(String query){
+        Supplier<Query> supplier = ()->Query.of(q->q.multiMatch(multiMatchQuerywithshopownernameAndaddressAndserviceProduct(query)));
+        return supplier;
+    }
+
+    public static MultiMatchQuery multiMatchQuerywithshopownernameAndaddressAndserviceProduct(String query) {
+        val  matchQuery = new MultiMatchQuery.Builder();
+        return matchQuery.fields("shopownername", "address", "serviceProduct").query(query).build();}
+    public static Supplier<Query> supplierWithshopownernameAndserviceProductAndproductBrand(String query){
+        Supplier<Query> supplier = ()->Query.of(q->q.multiMatch(multiMatchQuerywithshopownernameAndserviceProductAndproductBrand(query)));
+        return supplier;
+    }
+
+    public static MultiMatchQuery multiMatchQuerywithshopownernameAndserviceProductAndproductBrand(String query) {
+        val  matchQuery = new MultiMatchQuery.Builder();
+        return matchQuery.fields("shopownername", "serviceProduct", "productBrand").query(query).build();}
+
+
+    public static Supplier<Query> supplierWithshopnameAndshopownernameAndaddressAndserviceProduct(String query){
+        Supplier<Query> supplier = ()->Query.of(q->q.multiMatch(multiMatchQuerywithshopnameAndshopownernameAndaddressAndserviceProduct(query)));
+        return supplier;
+    }
+
+    public static MultiMatchQuery multiMatchQuerywithshopnameAndshopownernameAndaddressAndserviceProduct(String query) {
+        val  matchQuery = new MultiMatchQuery.Builder();
+        return matchQuery.fields("shopname", "shopownername", "address", "productBrand").query(query).build();}
+
+
+    
+
+    public static Supplier<Query> supplierWithshopnameAndshopownernameAndaddressAndproductBrand(String query){
+        Supplier<Query> supplier = ()->Query.of(q->q.multiMatch(multiMatchQuerywithshopnameAndshopownernameAndaddressAndproductBrand(query)));
+        return supplier;
+    }
+
+    public static MultiMatchQuery multiMatchQuerywithshopnameAndshopownernameAndaddressAndproductBrand(String query) {
+        val  matchQuery = new MultiMatchQuery.Builder();
+        return matchQuery.fields("shopname", "shopownername", "address", "productBrand").query(query).build();}
+
+
+
+
+
+    public static Supplier<Query> supplierWithshopnameAndshopownernameAndserviceProductAndproductBrand(String query){
+        Supplier<Query> supplier = ()->Query.of(q->q.multiMatch(multiMatchQuerywithshopnameAndshopownernameAndserviceProductAndproductBrand(query)));
+        return supplier;
+    }
+
+    public static MultiMatchQuery multiMatchQuerywithshopnameAndshopownernameAndserviceProductAndproductBrand(String query) {
+        val  matchQuery = new MultiMatchQuery.Builder();
+        return matchQuery.fields("shopname", "shopownername", "serviceProduct", "productBrand").query(query).build();}
+
+
+    public static Supplier<Query> supplierWithshopnameAndaddressAndserviceProductAndproductBrand(String query){
+        Supplier<Query> supplier = ()->Query.of(q->q.multiMatch(multiMatchQuerywithshopnameAndaddressAndserviceProductAndproductBrand(query)));
+        return supplier;
+    }
+
+    public static MultiMatchQuery multiMatchQuerywithshopnameAndaddressAndserviceProductAndproductBrand(String query) {
+        val  matchQuery = new MultiMatchQuery.Builder();
+        return matchQuery.fields("shopownername", "address", "serviceProduct", "productBrand").query(query).build();}
+
+
+    public static Supplier<Query> supplierWithshopownernameAndaddressAndserviceProductAndproductBrand(String query){
+        Supplier<Query> supplier = ()->Query.of(q->q.multiMatch(multiMatchQuerywithshopownernameAndaddressAndserviceProductAndproductBrand(query)));
+        return supplier;
+    }
+
+    public static MultiMatchQuery multiMatchQuerywithshopownernameAndaddressAndserviceProductAndproductBrand(String query) {
+        val  matchQuery = new MultiMatchQuery.Builder();
+        return matchQuery.fields("shopownername", "address", "serviceProduct", "productBrand").query(query).build();}
+
 
 
 

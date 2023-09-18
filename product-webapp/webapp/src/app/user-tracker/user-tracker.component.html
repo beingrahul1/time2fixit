@@ -1,0 +1,26 @@
+<body>
+  <h1 class="card-title text-center">Tracking Details</h1>
+
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6" *ngFor="let trackingItem of trackingData">
+        <div class="card bg-primary text-white mb-3" style="border: 3px solid #000;">
+          <div class="card-body">
+            <p class="card-text"><strong>Booking ID:</strong> {{ trackingItem.bookingId }}</p>
+            <p class="card-text"><strong>User Email:</strong> {{ trackingItem.userEmail }}</p>
+            <p class="card-text"><strong>Service provider Email:</strong> {{ trackingItem.serviceProviderEmail }}</p>
+            <p class="card-text"><strong>Status:</strong> {{ trackingItem.status }}</p>
+            <p class="card-text"><strong>Device Type:</strong> {{ trackingItem.deviceType }}</p>
+            <p class="card-text"><strong>Device Name:</strong> {{ trackingItem.deviceName }}</p>
+            <p class="card-text"><strong>Model No:</strong> {{ trackingItem.modelNo }}</p>
+            <p class="card-text"><strong>Issue Type:</strong> {{ trackingItem.issueType }}</p>
+            <p class="card-text"><strong>Issue Description:</strong> {{ trackingItem.issueDescription }}</p>
+            <p class="card-text"><strong>Expected Time:</strong> {{ trackingItem.expectedTime }}</p>
+            <p class="card-text"><strong>Cost:</strong> {{ trackingItem.cost }}</p>
+            <p class="card-text"><strong>Date:</strong> {{ trackingItem.date }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

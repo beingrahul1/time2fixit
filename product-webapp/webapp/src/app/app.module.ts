@@ -5,15 +5,26 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserRegistrationComponent } from './user-registration/user-registration.component';
 import { ServiceProviderRegistrationComponent } from './service-provider-registration/service-provider-registration.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { LoginComponent } from './login/login.component';
+import { ProviderUpdateComponent } from './provider-update/provider-update.component';
 
 import { FeedbackComponent } from './feedback/feedback.component';
 import { FeedbackDataComponent } from './feedback-data/feedback-data.component';
 import { UpdateuserComponent } from './updateuser/updateuser.component';
+<<<<<<< HEAD
+import { HomeserviceComponent } from './homeservice/homeservice.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
+import { FooterComponent } from './footer/footer.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+=======
+import { UserTrackerComponent } from './user-tracker/user-tracker.component';
+>>>>>>> 8ef51d0 (Tracking)
 
 
 @NgModule({
@@ -24,17 +35,26 @@ import { UpdateuserComponent } from './updateuser/updateuser.component';
 
     HomeComponent,
     LoginComponent,
-
+ProviderUpdateComponent,
     HomeComponent,
     FeedbackComponent,
     FeedbackDataComponent,
-    UpdateuserComponent
+    UpdateuserComponent,
+<<<<<<< HEAD
+    HomeserviceComponent,
+    NavbarComponent,
+    AboutusComponent,
+    FooterComponent,
+    ForgotPasswordComponent
+=======
+    UserTrackerComponent
+>>>>>>> 8ef51d0 (Tracking)
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

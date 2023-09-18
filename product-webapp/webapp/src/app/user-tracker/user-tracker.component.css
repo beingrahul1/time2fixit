@@ -1,0 +1,25 @@
+.card-title {
+    margin-bottom: 30px; /* Add the desired gap (adjust the value as needed) */
+  }
+
+  body {
+    background-color: #007bff !important; /* Set the primary blue color for the body background */
+  }
+  
+  .card {
+    background-color: #fff !important; /* Set the white color for the card background */
+  }
+
+  
+  .card-text {
+    color: #000; /* Set the text color within the card to black */
+  }
+
+  h1{
+    color: #fff;
+  }
+
+
+
+
+  
