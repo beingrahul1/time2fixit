@@ -11,6 +11,8 @@ import { user } from './user-registration/user.model';
 export class UserService {
 
   constructor(private http:HttpClient) { }
+  updateuser(user1:user){
+    return this.http.post<user>('http://localhost:1234/customer/update',user1)}
 
   registerUser(user:user){
     return this.http.post<user>(`http://localhost:1111/user/registration/na/signup`,user)

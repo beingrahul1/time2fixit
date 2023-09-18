@@ -15,12 +15,13 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { UserTrackerComponent } from './user-tracker/user-tracker.component';
 import { ServicelistComponent } from './servicelist/servicelist.component';
+import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
-  { path: '', component: UserRegistrationComponent },
+  { path: '', component: HomeComponent },
   { path: 'service-provider-registration', component: ServiceProviderRegistrationComponent },
   { path: 'user-registration', component: UserRegistrationComponent },
-
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
 { path: 'provider-update', component: ProviderUpdateComponent },
@@ -33,7 +34,7 @@ const routes: Routes = [
   { path: 'aboutus', component: AboutusComponent },
   
 
-  { path: 'user-tracker', component: UserTrackerComponent}
+  { path: 'user-tracker', component: UserTrackerComponent},
 
 
   { path: 'feedback', component: FeedbackComponent },

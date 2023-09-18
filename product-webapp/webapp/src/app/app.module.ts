@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserRegistrationComponent } from './user-registration/user-registration.component';
 import { ServiceProviderRegistrationComponent } from './service-provider-registration/service-provider-registration.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 
@@ -25,6 +25,7 @@ import { UserTrackerComponent } from './user-tracker/user-tracker.component';
 import { ServiceCenterProfileComponent } from './service-center-profile/service-center-profile.component';
 import { OrderTrackingServiceComponent } from './order-tracking-service/order-tracking-service.component';
 import { UpdateOrderTrackingComponent } from './update-order-tracking/update-order-tracking.component';
+import { ServicelistComponent } from './servicelist/servicelist.component';
 
 @NgModule({
   declarations: [
@@ -48,13 +49,15 @@ import { UpdateOrderTrackingComponent } from './update-order-tracking/update-ord
     FeedbackDataComponent,
     ServiceCenterProfileComponent,
     OrderTrackingServiceComponent,
-    UpdateOrderTrackingComponent
+    UpdateOrderTrackingComponent,
+    ServicelistComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
