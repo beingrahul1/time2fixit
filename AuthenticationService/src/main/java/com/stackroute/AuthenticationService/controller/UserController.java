@@ -72,18 +72,18 @@ public class UserController {
     
 //    @PostMapping("na/signup")
     
-//    @RabbitListener(queues = "cgiqueue")
-//    public void customersignup(User user){
-//    	this.u1 = user;
-//    	userRepository.save(u1);
-//    	
-//          }
+    @RabbitListener(queues = "cgiqueue")
+    public void customersignup(User user){
+    	this.u1 = user;
+    	userRepository.save(u1);
+    	
+          }
     
-    @PostMapping("na/signup")
-    public User customersignup(@RequestBody User u1)
-    {
-    	return userRepository.save(u1);
-    }
+//    @PostMapping("na/signup")
+//    public User customersignup(@RequestBody User u1)
+//    {
+//    	return userRepository.save(u1);
+//    }
 
 
     @PostMapping("na/forgot")
