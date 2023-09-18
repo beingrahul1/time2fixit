@@ -16,6 +16,7 @@ import { ProviderUpdateComponent } from './provider-update/provider-update.compo
 import { FeedbackComponent } from './feedback/feedback.component';
 import { FeedbackDataComponent } from './feedback-data/feedback-data.component';
 import { UpdateuserComponent } from './updateuser/updateuser.component';
+<<<<<<< HEAD
 import { HomeserviceComponent } from './homeservice/homeservice.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
@@ -27,6 +28,12 @@ import { OrderTrackingServiceComponent } from './order-tracking-service/order-tr
 import { UpdateOrderTrackingComponent } from './update-order-tracking/update-order-tracking.component';
 import { ServicelistComponent } from './servicelist/servicelist.component';
 
+=======
+import { BookingFormComponent } from './booking-form/booking-form.component';
+import { AppointmentComponent } from './appointment/appointment.component';
+import { ReactiveFormsModule} from '@angular/forms';
+import { GadgetDetailsComponent } from './gadget-details/gadget-details.component';
+>>>>>>> f9d8f16 (completed)
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,6 +46,7 @@ import { ServicelistComponent } from './servicelist/servicelist.component';
     FeedbackComponent,
     FeedbackDataComponent,
     UpdateuserComponent,
+<<<<<<< HEAD
     HomeserviceComponent,
     NavbarComponent,
     AboutusComponent,
@@ -51,6 +59,11 @@ import { ServicelistComponent } from './servicelist/servicelist.component';
     OrderTrackingServiceComponent,
     UpdateOrderTrackingComponent,
     ServicelistComponent
+=======
+    BookingFormComponent,
+    AppointmentComponent,
+    GadgetDetailsComponent,
+>>>>>>> f9d8f16 (completed)
   ],
   imports: [
     BrowserModule,

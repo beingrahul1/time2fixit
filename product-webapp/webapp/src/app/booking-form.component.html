@@ -1,0 +1,55 @@
+<body>
+  <h1 style="color: darkgreen;">BOOK AN APPOINTMENT</h1>
+
+  <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()">
+<label for="name"><strong style="color: darkmagenta;">Name:</strong></label>
+    <input type="text" id="name" formControlName="name" style="padding-right: 4cm;" required><br><br>
+
+    <label for="email"><strong style="color:darkmagenta;">Email:</strong></label>
+    <input type="email" id="email" formControlName="email" style="padding-right: 4cm;"  required><br><br>    
+
+    <label for="service"><strong style="color:darkmagenta;">Service:</strong></label>
+    <select id="service" formControlName="service" required>
+      <option value="service1">Laptop</option>
+      <option value="service2">Tablet</option>
+      <option value="service3">Smart Watch</option>
+      <!-- Add more service options as needed -->
+    </select><br><br>
+
+    <label for="brand"><strong style="color:darkmagenta;">Brand:</strong></label>
+    <select id="brand" formControlName="brand" required>
+      <option value="brand1">Redmi</option>
+      <option value="brand2">Samsung</option>
+      <option value="brand3">Apple</option>
+      <option value="brand4">Vivo</option>
+      <option value="brand5">Oppo</option>
+      <!-- Add more brand options as needed -->
+    </select><br><br>
+
+    <label for="date"><strong style="color:darkmagenta;">Date:</strong></label>
+    <input type="date" id="date" style="padding-right: 4cm;"  formControlName="date" required><br><br>
+
+    <label for="time"><strong style="color:darkmagenta;">Time:</strong></label>
+    <input type="time" id="time" style="padding-right: 4cm;"  formControlName="time" required><br><br>
+
+    <label for="paymentMode"><strong style="color:darkmagenta;">Payment Mode:</strong></label>
+    <input type="radio" id="online" style="padding-right: 4cm;"  formControlName="paymentMode" value="online"> <strong>Online</strong>
+<input type="radio" id="offline" style="padding-right: 4cm;"  formControlName="paymentMode" value="offline"> <strong>Offline</strong><br><br>
+
+
+    <div *ngIf="bookingForm?.get('paymentMode')?.value === 'online'">
+      <label for="cardNumber"><strong style="color:darkmagenta;">Card Number:</strong></label>
+      <input type="text" id="cardNumber" formControlName="cardNumber" maxlength="12"><br><br>
+      <label for="CardHolderName"><strong style="color: darkmagenta;">Cardholder Name:</strong></label>
+      <input type="text" id="CardHolderName" formControlName="cardHolderName"><br><br>
+      <label for="expiryDate"><strong style="color:darkmagenta;">Expiry Date (MM/YY):</strong></label>
+      <input type="text" id="expiryDate" formControlName="expiryDate" placeholder="MM/YY" pattern="(0[1-9]|1[0-2])\/(\d{2})" required><br><br>
+      <label for="cvv"><strong style="color:darkmagenta;">CVV:</strong></label>
+      <input type="password" id="cvv" formControlName="cvv" maxlength="3" pattern="\d{3}" required><br><br>
+    </div><br><br>
+
+    <button type="submit">Book Appointment</button>
+    <button type="button" class="cancel-button">Cancel</button>
+
+  </form>
+</body>

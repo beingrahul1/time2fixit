@@ -1,0 +1,43 @@
+<!-- src/app/booking-form/booking-form.component.html -->
+<div class="container">
+  <h1 style="color: darkgreen;">BOOK AN APPOINTMENT</h1>
+  
+  <form (submit)="submitBooking()">
+    <label for="name"><strong style="color: darkmagenta;">Name:</strong></label>
+    <input type="text" id="name" [(ngModel)]="booking.name" name="name" required><br><br>
+
+    <label for="email"><strong style="color:darkmagenta;">Email:</strong></label>
+    <input type="email" id="email" [(ngModel)]="booking.email" name="email" required><br><br>    
+
+    <label for="service"><strong style="color:darkmagenta;">Service:</strong></label>
+    <select id="service" [(ngModel)]="booking.gadgetType" name="service" required>
+      <option value="service1">Laptop</option>
+      <option value="service2">Tablet</option>
+      <option value="service3">Smart Watch</option>
+    </select><br><br>
+
+    <label for="brand"><strong style="color:darkmagenta;">Brand:</strong></label>
+    <select id="brand" [(ngModel)]="booking.gadgetName" name="brand" required>
+      <option value="brand1">Redmi</option>
+      <option value="brand2">Samsung</option>
+      <option value="brand3">Apple</option>
+      <option value="brand4">Vivo</option>
+      <option value="brand5">Oppo</option>
+    </select><br><br>
+
+    <label for="gedgetIMEI"><strong style="color:darkmagenta;">gedgetIMEI:</strong></label>
+    <input type="text" id="gedgetIMEI" [(ngModel)]="booking.gadgetIMEI" name="gedgetIMEI" required><br><br> 
+
+    <label for="date"><strong style="color:darkmagenta;">Date:</strong></label>
+    <input type="date" id="date" [(ngModel)]="booking.date" name="date" required><br><br>
+
+    <label for="time"><strong style="color:darkmagenta;">Time:</strong></label>
+    <input type="time" id="time" [(ngModel)]="booking.time" name="time" required><br><br>
+
+    <label for="issue"><strong style="color:darkmagenta;">Enter the details issue:</strong></label>
+    <input type="text" id="issue" [(ngModel)]="booking.issue" name="issue" required><br><br> 
+    
+    <button type="submit">Book Appointment</button>
+    <button type="button" class="cancel-button">Cancel</button>
+  </form>
+</div>

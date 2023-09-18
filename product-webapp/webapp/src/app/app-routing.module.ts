@@ -18,6 +18,8 @@ import { ServicelistComponent } from './servicelist/servicelist.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 
+import { BookingFormComponent } from './booking-form/booking-form.component';
+import { AppointmentComponent } from './appointment/appointment.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'service-provider-registration', component: ServiceProviderRegistrationComponent },
@@ -39,6 +41,13 @@ const routes: Routes = [
 
   { path: 'feedback', component: FeedbackComponent },
   { path: 'showfeedback', component: FeedbackDataComponent },
+<<<<<<< HEAD
+=======
+  { path: 'updateuser', component: UpdateuserComponent },
+  { path: 'booking', component: BookingFormComponent },
+  { path: 'appointments', component: AppointmentComponent },
+
+>>>>>>> f9d8f16 (completed)
 
   { path: 'serviceprofile', component:ServiceCenterProfileComponent },
   { path: 'ordertracking', component:OrderTrackingServiceComponent },

@@ -1,0 +1,67 @@
+body {
+    background-image: url("https://media.istockphoto.com/id/871927176/photo/repairman-disassemble-motherboard-with-screwdriver.jpg?s=612x612&w=0&k=20&c=uoGvYBkr5o_o1So1OBTVu8IS8jX79tUfgzz6_XBVO6w=");
+    background-repeat: no-repeat;
+    background-position: right; /* Position the image on the right side */
+    /* You can also use background-position: top right; or bottom right; for specific positions */
+    
+    /* Add the light blue background color */
+    background-color: lightblue;
+    
+    /* Add more CSS properties for styling as needed */
+  }
+  /* CSS to style the "Book Appointment" button */
+button[type="submit"] {
+    /* Set the background color to dark blue */
+    background-color: darkblue;
+    
+    /* Set the text color to white */
+    color: white;
+    
+    /* Increase the font size to make the button larger */
+    font-size: 20px;
+    
+    /* Add padding to increase the button's size and improve readability */
+    padding: 10px 20px;
+    
+    /* Add border-radius for rounded corners */
+    border-radius: 5px;
+    
+    /* Add hover effect for better user interaction */
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Add a hover effect to change the button's background color on hover */
+  button[type="submit"]:hover {
+    background-color: navy; /* Change the color on hover */
+  }
+  /* CSS to style the "Cancel" button */
+.cancel-button {
+    /* Set the background color to orange */
+    background-color: rgb(255, 0, 43);
+  
+    /* Set the text color to white */
+    color: white;
+  
+    /* Increase the font size to make the button larger */
+    font-size: 20px;
+  
+    /* Add padding to increase the button's size and improve readability */
+    padding: 10px 20px;
+  
+    /* Add border-radius for rounded corners */
+    border-radius: 5px;
+  
+    /* Add margin to push the button to the right */
+    margin-left: 10px;
+  
+    /* Add hover effect for better user interaction */
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Add a hover effect to change the "Cancel" button's background color on hover */
+  .cancel-button:hover {
+    background-color: rgb(255, 0, 0); /* Change the color on hover */
+  }
+  
+  
+  
