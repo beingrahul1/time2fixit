@@ -1,16 +1,35 @@
 version: "3"
 
 services:
-  elasticsearch:
-    image: docker.elastic.co/elasticsearch/elasticsearch:7.17.5
-    container_name: elasticsearch
-    environment:
-      - node.name=elasticsearch
-      - cluster.name=elasticsearch
-      - discovery.type=single-node
-      - bootstrap.memory_lock=true
-      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+  eureka-server:
+    build: eureka-server/
+    container_name: eureka-server
+    restart: always
+    network_mode: "host"
+    hostname: localhost
     ports:
-      - 9200:9200
-      - 9300:9300
+      - 8076:8076
 
+  api-gateway:
+    build: api-gateway/
+    container_name: api-gateway
+    depends_on:
+      - eureka-server
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - 8080:8080
+
+  product-webapp:
+    build: product-webapp/
+    image: product-webapp
+    depends_on:
+      - eureka-server
+      - api-gateway
+    restart: always
+    container_name: product-webapp
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - "8099:8099"
