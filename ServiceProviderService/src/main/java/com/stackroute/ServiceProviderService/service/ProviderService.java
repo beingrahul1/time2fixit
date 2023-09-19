@@ -49,10 +49,7 @@ public class ProviderService {
         provider1.setServiceProduct(provider.getServiceProduct());
         provider1.setProductBrand(provider.getProductBrand());
         provider1.setProfilePic(provider.getProfilePic());
-<<<<<<< HEAD
-        
-=======
->>>>>>> c81ad4bc5d36e487100d11c2ab71eec6197449a7
+
         return providerRepo.save(provider1);
     }
 

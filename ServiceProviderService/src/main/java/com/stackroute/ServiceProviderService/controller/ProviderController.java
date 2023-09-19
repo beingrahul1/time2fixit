@@ -12,7 +12,6 @@ import co.elastic.clients.elasticsearch.core.search.Hit;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
@@ -473,12 +472,7 @@ public class ProviderController {
         return listOfProviders;
     }
 
-    @GetMapping("/matchAll")
-    public String matchAll() throws IOException {
-        SearchResponse<Map> searchResponse =  providerService.matchAllServices();
-        System.out.println(searchResponse.hits().hits().toString());
-        return searchResponse.hits().hits().toString();
-    }
+
 
     @GetMapping("/matchAllProviders")
     public List<Provider> matchAllProviders() throws IOException {
