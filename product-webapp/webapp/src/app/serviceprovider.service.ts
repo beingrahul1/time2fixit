@@ -14,10 +14,16 @@ export class ServiceproviderService {
   }
 
 
+<<<<<<< HEAD
+  serviceProviderList(): Observable<any>
+  {
+    return this.http.get<provider[]>(`http://localhost:2222/apis/findAll`, {responseType: "text" as "json"});
+=======
 
   serviceProviderList(): Observable<any>
   {
     return this.http.get<provider[]>(`http:localhost:2222/apis/findAll`, {responseType: "text" as "json"});
+>>>>>>> c81ad4bc5d36e487100d11c2ab71eec6197449a7
   }
   
   getByEmail(query:string): Observable<any>
@@ -25,7 +31,11 @@ export class ServiceproviderService {
     return this.http.get<provider[]>(`http://localhost:2222/apis/matchAllProvidersWithEmail?email=${encodeURIComponent(query)}`, {responseType: "text" as "json"});
   }
 
+<<<<<<< HEAD
+  getByShopname(query:string): Observable<any>
+=======
   getByShopname(query:any): Observable<any>
+>>>>>>> c81ad4bc5d36e487100d11c2ab71eec6197449a7
   {
     return this.http.get<provider[]>(`http://localhost:2222/apis/matchProvidersWithshopname?email=${encodeURIComponent(query)}`, {responseType: "text" as "json"});
   }
@@ -51,22 +61,38 @@ export class ServiceproviderService {
 
   getByshopNameandShopOwnerName(query:any): Observable<any>
   {
+<<<<<<< HEAD
+    return this.http.get<provider[]>(`http://localhost:2222/apis/matchProvidersWithshopnameAndshopownername?email=${encodeURIComponent(query)}`, {responseType: "text" as "json"});
+=======
     return this.http.get<provider[]>(`http:localhost:2222/apis/matchProvidersWithshopnameAndshopownername?email=${encodeURIComponent(query)}`, {responseType: "text" as "json"});
+>>>>>>> c81ad4bc5d36e487100d11c2ab71eec6197449a7
   }
 
   getByShopNameandServiceProduct(query:any): Observable<any>
   {
+<<<<<<< HEAD
+    return this.http.get<provider[]>(`http://localhost:2222/apis/matchProvidersWithshopnameAndserviceProduct?email=${encodeURIComponent(query)}`, {responseType: "text" as "json"});
+=======
     return this.http.get<provider[]>(`http:localhost:2222/apis/matchProvidersWithshopnameAndserviceProduct?email=${encodeURIComponent(query)}`, {responseType: "text" as "json"});
+>>>>>>> c81ad4bc5d36e487100d11c2ab71eec6197449a7
   }
 
   getByShopNameandProductBrand(query:any): Observable<any>
   {
+<<<<<<< HEAD
+    return this.http.get<provider[]>(`http://localhost:2222/apis/matchProvidersWithshopnameAndproductBrand?email=${encodeURIComponent(query)}`, {responseType: "text" as "json"});
+=======
     return this.http.get<provider[]>(`http:localhost:2222/apis/matchProvidersWithshopnameAndproductBrand?email=${encodeURIComponent(query)}`, {responseType: "text" as "json"});
+>>>>>>> c81ad4bc5d36e487100d11c2ab71eec6197449a7
   }
 
   getByShopNameandAddress(query:any): Observable<any>
   {
+<<<<<<< HEAD
+    return this.http.get<provider[]>(`http://localhost:2222/apis/matchProvidersWithshopnameAndaddress?email=${query}`, {responseType: "text" as "json"});
+=======
     return this.http.get<provider[]>(`http:localhost:2222/apis/matchProvidersWithshopnameAndaddress?email=${query}`, {responseType: "text" as "json"});
+>>>>>>> c81ad4bc5d36e487100d11c2ab71eec6197449a7
   }
   getByShopownernameandAddress(query:any): Observable<any>
   {
@@ -75,7 +101,11 @@ export class ServiceproviderService {
 
 
   getByShopNameandShopOwnernameAndAddress(query:any) : Observable<any>{
+<<<<<<< HEAD
+    return this.http.get<provider[]>(`http://localhost:2222/apis/matchProvidersWithshopnameAndshopownernameAndaddress?email=${encodeURIComponent(query)}`, {responseType: "text" as "json"});
+=======
     return this.http.get<provider[]>(`http://localhost:2222/apis/mmatchProvidersWithshopnameAndshopownernameAndaddress?email=${encodeURIComponent(query)}`, {responseType: "text" as "json"});
+>>>>>>> c81ad4bc5d36e487100d11c2ab71eec6197449a7
   }
   
   getByShopNameandShopOwnernameAndServiceProduct(query:any) : Observable<any>{
@@ -179,6 +209,44 @@ export class ServiceproviderService {
    {
      return this.http.get<provider[]>(`http://localhost:2222/apis/matchProvidersWithserviceProductAndproductBrand?email=${encodeURIComponent(query)}`, {responseType: "text" as "json"});
    }
+<<<<<<< HEAD
+
+   getByAddressandContactNumber(query:any): Observable<any>
+   {
+     return this.http.get<provider[]>(`http://localhost:2222/apis/matchProvidersWithaddressAndcontactnumber?email=${encodeURIComponent(query)}`, {responseType: "text" as "json"});
+   }
+
+   getByAddressandEmail(query:any): Observable<any>
+   {
+     return this.http.get<provider[]>(`http://localhost:2222/apis/matchProvidersWithaddressAndemail?email=${encodeURIComponent(query)}`, {responseType: "text" as "json"});
+   }
+  
+   getByShopnameAndShopownernameAndAddressAndServiceProduct(query:any) : Observable<any>{
+     return this.http.get<provider[]>(`http://localhost:2222/apis/matchProvidersWithshopnameAndshopownernameAndaddressAndserviceProduct?email=${encodeURIComponent(query)}`, {responseType: "text" as "json"});
+   }
+  
+   getByShopnameAndShopownernameAndAddressAndProductBrand(query:any): Observable<any> {
+     return this.http.get<provider[]>(`http://localhost:2222/apis/matchProvidersWithshopnameAndshopownernameAndaddressAndproductBrand?email=${encodeURIComponent(query)}`, {responseType: "text" as "json"});
+   }
+  
+   getByShopnameAndShopownernameAndServiceProductAndProductBrand(query:any) : Observable<any>{
+     return this.http.get<provider[]>(`http://localhost:2222/apis/matchProvidersWithshopnameAndshopownernameAndserviceProductAndproductBrand?email=${encodeURIComponent(query)}`, {responseType: "text" as "json"});
+   }
+  
+   getByShopnameAndAddressAndServiceProductAndProductBrand(query:any): Observable<any> {
+     return this.http.get<provider[]>(`http://localhost:2222/apis/matchProvidersWithshopnameAndaddressAndserviceProductAndproductBrand?email=${encodeURIComponent(query)}`, {responseType: "text" as "json"});
+   }
+  
+   getByShopownernameAndAddressAndServiceProductAndProductBrand(query:any): Observable<any> {
+     return this.http.get<provider[]>(`http://localhost:2222/apis/matchProvidersWithshopownernameAndaddressAndserviceProductAndproductBrand?email=${encodeURIComponent(query)}`, {responseType: "text" as "json"});
+   }
+  
+   getByAllFields(query:any): Observable<any>
+   {
+     return this.http.get<provider[]>(`http://localhost:2222/apis/matchAllProvidersAllFields?email=${encodeURIComponent(query)}`, {responseType: "text" as "json"});
+   }
+ 
+=======
 
    getByAddressandContactNumber(query:any): Observable<any>
    {
@@ -216,4 +284,5 @@ export class ServiceproviderService {
    }
  
 
+>>>>>>> c81ad4bc5d36e487100d11c2ab71eec6197449a7
 }

@@ -1,6 +1,9 @@
 package com.stackroute.ServiceProviderService.controller;
 
 
+import com.stackroute.ServiceProviderService.model.Provider;
+import com.stackroute.ServiceProviderService.model.ServiceCenter;
+import com.stackroute.ServiceProviderService.repo.ProviderRepo;
 import com.stackroute.ServiceProviderService.service.ProviderService;
 
 import co.elastic.clients.elasticsearch.core.SearchResponse;
@@ -12,19 +15,35 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
+import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import com.example.springbootelasticsearchexample.entity.Provider;
-import com.stackroute.ServiceProviderService.model.*;
+
 
 @RestController
 @RequestMapping("/apis")
 public class ProviderController {
 
 
+
     @Autowired
     private ProviderService  providerService;
+    
+    @Autowired
+    private ProviderRepo providerRepo;
+    
+    ServiceCenter sc;
+    Provider provider;
+    @RabbitListener(queues = "cgiqueue1")
+    public void customersignup(ServiceCenter c1 ){
+    	this.provider.setEmail(c1.getEmail());
+    	this.provider.setShopname(c1.getShopName());
+    	this.provider.setShopownername(c1.getShopOwnerName());
+          providerRepo.save(provider);
+    	
+          }
+
     @GetMapping("/findAll")
     Iterable<Provider> findAll(){
        return providerService.getProviders();
@@ -204,6 +223,7 @@ public class ProviderController {
         }
         return listOfProviders;
     }
+
 
 @GetMapping("/matchProvidersWithshopownernameAndserviceProductAndproductBrand")
     public List<Provider> matchProvidersWithshopownernameAndserviceProductAndproductBrand(@RequestParam String email) throws IOException {
@@ -610,3 +630,5 @@ public class ProviderController {
         return listOfProviders;
     }
 }
+
+
